@@ -13,7 +13,7 @@ if ($login['emp_position'] == "0") {
         <div class="row">
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                 <div class="logo-pro">
-                    <a href="index.html"><img class="main-logo" src="img/Honda-Motorcycle-Logo.png" width="75px" alt="" /></a>
+                    <a href="index.html"><img class="main-logo" src="img/Honda-Motorcycle-Logo.png" width="60px" alt="" /></a>
                 </div>
             </div>
         </div>
@@ -35,14 +35,14 @@ if ($login['emp_position'] == "0") {
                                 <div class="col-lg-6 col-md-7 col-sm-6 col-xs-12">
                                     <div class="header-top-menu tabl-d-n">
                                         <ul class="nav navbar-nav mai-top-nav">
-                                            <li class="nav-item"><a href="#" class="nav-link">Home</a>
-                                            </li>
-                                            <li class="nav-item"><a href="#" class="nav-link">About</a>
-                                            </li>
-                                            <li class="nav-item"><a href="#" class="nav-link">Services</a>
-                                            </li>
-                                            <li class="nav-item"><a href="#" class="nav-link">Support</a>
-                                            </li>
+<!--                                            <li class="nav-item"><a href="#" class="nav-link">Home</a>-->
+<!--                                            </li>-->
+<!--                                            <li class="nav-item"><a href="#" class="nav-link">About</a>-->
+<!--                                            </li>-->
+<!--                                            <li class="nav-item"><a href="#" class="nav-link">Services</a>-->
+<!--                                            </li>-->
+<!--                                            <li class="nav-item"><a href="#" class="nav-link">Support</a>-->
+<!--                                            </li>-->
                                         </ul>
                                     </div>
                                 </div>

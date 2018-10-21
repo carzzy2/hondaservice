@@ -10,7 +10,7 @@
                 <strong>สวัสดี!</strong>  คุณ<?=$login['emp_name']?> ยินดีต้อนรับเข้าสู่ระบบบริหารจัดการข้อมูลลูกค้า
             </div>
         </div>
-        <div class="clearfix"></div><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+        <div class="clearfix"></div><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
     </div>
 </div>
 <?php include "footer.php"; ?>

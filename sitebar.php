@@ -34,13 +34,51 @@ if($_SESSION['ss_login'] != session_id() or $_SESSION['ss_emp_id']==NULL ){
     <link rel="stylesheet" href="css/metisMenu/metisMenu-vertical.css">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/buttons.css">
     <script src="js/vendor/modernizr-2.8.3.min.js"></script>
 </head>
 <body>
 <style>
+    .text-center {
+        text-align: center!important;
+    }
     .container-fluid{
         padding-left: 0px;
         padding-right: 0px;
+    }
+    .btn-white{
+        border-color: #ccc;
+        color: black;
+    }
+    #custom-search-input{
+        border: solid 1px #E4E4E4;
+        border-radius: 6px;
+        background-color: #fff;
+    }
+
+    #custom-search-input input{
+        border: 0;
+        box-shadow: none;
+    }
+
+    #custom-search-input button{
+        margin: 2px 0 0 0;
+        background: none;
+        box-shadow: none;
+        border: 0;
+        color: #666666;
+        padding: 0 8px 0 10px;
+        border-left: solid 1px #ccc;
+    }
+
+    #custom-search-input button:hover{
+        border: 0;
+        box-shadow: none;
+        border-left: solid 1px #ccc;
+    }
+
+    #custom-search-input .glyphicon-search{
+        font-size: 23px;
     }
 </style>
 <div class="left-sidebar-pro">
@@ -57,14 +95,16 @@ if($_SESSION['ss_login'] != session_id() or $_SESSION['ss_emp_id']==NULL ){
                             <span class="mini-click-non">ข้อมูลพื้นฐาน</span>
                         </a>
                         <ul class="submenu-angle" aria-expanded="true">
-                            <li><a title="Dashboard v.1" href="index.html"><i class="fa fa-bullseye sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Dashboard v.1</span></a></li>
-                            <li><a title="Dashboard v.1" href="index.html"><i class="fa fa-bullseye sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Dashboard v.1</span></a></li>
-                            <li><a title="Dashboard v.1" href="index.html"><i class="fa fa-bullseye sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Dashboard v.1</span></a></li>
-                            <li><a title="Dashboard v.1" href="index.html"><i class="fa fa-bullseye sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Dashboard v.1</span></a></li>
+                            <li><a href="store.php"><i class="fa fa-bullseye sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">ข้อมูลร้าน</span></a></li>
+                            <li><a href="customer_list.php"><i class="fa fa-bullseye sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">ข้อมูลลูกค้า</span></a></li>
+                            <li><a href=""><i class="fa fa-bullseye sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">ข้อมูลรถ</span></a></li>
+                            <li><a href=""><i class="fa fa-bullseye sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">ข้อมูลพนักงาน</span></a></li>
+                            <li><a href=""><i class="fa fa-bullseye sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">ข้อมูลรายการตรวจเช็ค</span></a></li>
+                            <li><a href=""><i class="fa fa-bullseye sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">ข้อมูลอะไหล่</span></a></li>
                         </ul>
                     </li>
-                    <li><a href="#" aria-expanded="false"><i class="fa big-icon fa-table icon-wrap" aria-hidden="true"></i><span class="mini-click-non">Data Tables</span></a></li>
-                    <li><a href="#" aria-expanded="false"><i class="fa fa-bookmark icon-wrap sub-icon-mg" aria-hidden="true"></i> <span class="mini-click-non">Landing Page</span></a></li>
+<!--                    <li><a href="#" aria-expanded="false"><i class="fa big-icon fa-table icon-wrap" aria-hidden="true"></i><span class="mini-click-non">Data Tables</span></a></li>-->
+<!--                    <li><a href="#" aria-expanded="false"><i class="fa fa-bookmark icon-wrap sub-icon-mg" aria-hidden="true"></i> <span class="mini-click-non">Landing Page</span></a></li>-->
                 </ul>
             </nav>
         </div>

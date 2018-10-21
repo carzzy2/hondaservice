@@ -2,7 +2,7 @@
 <?php include "header.php"; ?>
 <div class="container-fluid">
     <div class="product-status-wrap table table-responsive">
-        <h4>Products List</h4>
+        <h4>จัดการข้อมูลร้าน</h4>
         <table>
             <tbody><tr>
                 <th>Image</th>
