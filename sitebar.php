@@ -36,11 +36,15 @@ if($_SESSION['ss_login'] != session_id() or $_SESSION['ss_emp_id']==NULL ){
     <link rel="stylesheet" href="css/responsive.css">
     <link rel="stylesheet" href="css/buttons.css">
     <script src="js/vendor/modernizr-2.8.3.min.js"></script>
+    <script src="js/vendor/jquery-1.11.3.min.js"></script>
 </head>
 <body>
 <style>
     .text-center {
         text-align: center!important;
+    }
+    .text-right {
+        text-align: right!important;
     }
     .container-fluid{
         padding-left: 0px;
@@ -81,6 +85,16 @@ if($_SESSION['ss_login'] != session_id() or $_SESSION['ss_emp_id']==NULL ){
         font-size: 23px;
     }
 </style>
+<?php
+$sql_login = "select * from employee where emp_id='".$_SESSION['ss_emp_id']."'";
+$result_login = mysqli_query($connect, $sql_login);
+$login = mysqli_fetch_array($result_login);
+if ($login['emp_position'] == "0") {
+    $loginposition = "เจ้าของบริษัท";
+} elseif ($login['emp_position'] == "1") {
+    $loginposition = "พนักงาน";
+}
+?>
 <div class="left-sidebar-pro">
     <nav id="sidebar" class="">
         <div class="sidebar-header">
@@ -89,20 +103,22 @@ if($_SESSION['ss_login'] != session_id() or $_SESSION['ss_emp_id']==NULL ){
         <div class="left-custom-menu-adp-wrap comment-scrollbar">
             <nav class="sidebar-nav left-sidebar-menu-pro">
                 <ul class="metismenu" id="menu1">
+                    <?php if ($login['emp_position'] == "0") { ?>
                     <li>
                         <a class="has-arrow" href="index.php">
                             <i class="fa big-icon fa-home icon-wrap"></i>
                             <span class="mini-click-non">ข้อมูลพื้นฐาน</span>
                         </a>
                         <ul class="submenu-angle" aria-expanded="true">
+                            <li><a href="employee_list.php"><i class="fa fa-bullseye sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">ข้อมูลพนักงาน</span></a></li>
                             <li><a href="store.php"><i class="fa fa-bullseye sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">ข้อมูลร้าน</span></a></li>
                             <li><a href="customer_list.php"><i class="fa fa-bullseye sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">ข้อมูลลูกค้า</span></a></li>
-                            <li><a href=""><i class="fa fa-bullseye sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">ข้อมูลรถ</span></a></li>
-                            <li><a href=""><i class="fa fa-bullseye sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">ข้อมูลพนักงาน</span></a></li>
-                            <li><a href=""><i class="fa fa-bullseye sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">ข้อมูลรายการตรวจเช็ค</span></a></li>
-                            <li><a href=""><i class="fa fa-bullseye sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">ข้อมูลอะไหล่</span></a></li>
+                            <li><a href="car_list.php"><i class="fa fa-bullseye sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">ข้อมูลรถ</span></a></li>
+                            <li><a href="check_list.php"><i class="fa fa-bullseye sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">ข้อมูลรายการตรวจเช็ค</span></a></li>
+                            <li><a href="spareparts_list.php"><i class="fa fa-bullseye sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">ข้อมูลอะไหล่</span></a></li>
                         </ul>
                     </li>
+                    <?php } ?>
 <!--                    <li><a href="#" aria-expanded="false"><i class="fa big-icon fa-table icon-wrap" aria-hidden="true"></i><span class="mini-click-non">Data Tables</span></a></li>-->
 <!--                    <li><a href="#" aria-expanded="false"><i class="fa fa-bookmark icon-wrap sub-icon-mg" aria-hidden="true"></i> <span class="mini-click-non">Landing Page</span></a></li>-->
                 </ul>

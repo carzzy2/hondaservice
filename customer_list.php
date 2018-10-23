@@ -18,13 +18,13 @@
                     </form>
                 </div>
             </div>
-            <div class="col-md-8">
-                <div class="pull-right">
-                    <a data-toggle="tooltip" href="customer_form.php" class="btn btn-primary btn-custon-rounded-two" data-original-title="เพิ่มข้อมูล">
-                        <i class="fa fa-sign-in "></i> เพิ่มข้อมูล
-                    </a>
-                </div>
-            </div>
+<!--            <div class="col-md-8">-->
+<!--                <div class="pull-right">-->
+<!--                    <a data-toggle="tooltip" href="customer_form.php" class="btn btn-primary btn-custon-rounded-two" data-original-title="เพิ่มข้อมูล">-->
+<!--                        <i class="fa fa-sign-in "></i> เพิ่มข้อมูล-->
+<!--                    </a>-->
+<!--                </div>-->
+<!--            </div>-->
         </div><div class="clearfix"></div><br>
         <div class="row">
             <div class="col-md-12">
