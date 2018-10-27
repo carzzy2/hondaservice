@@ -51,7 +51,7 @@ if ($_GET['mode'] == "") {
                                             <div class="form-group-inner">
                                                 <div class="row">
                                                     <div class="col-md-2">
-                                                        <label class="login2 pull-right pull-right-pro">ชื่อพนักงาน</label>
+                                                        <label class="login2 pull-right pull-right-pro">ชื่อพนักงาน<span style="color: red;">*</span></label>
                                                     </div>
                                                     <div class="col-md-9">
                                                         <input type="text" value="<?=$array['emp_name']?>" name="emp_name" class="form-control" required>
@@ -85,8 +85,8 @@ if ($_GET['mode'] == "") {
                                                     </div>
                                                     <div class="col-lg-9 col-md-3 col-sm-3 col-xs-3">
                                                         <div class="bt-df-checkbox">
-                                                            <input class="radio-checked" type="radio" value="option1" id="optionsRadios1" name="optionsRadios">พนักงาน
-                                                            <input class="radio-checked" type="radio" value="option1" id="optionsRadios1" name="optionsRadios">ผู้ดูแลระบบ
+                                                            <input class="radio-checked"  name="emp_position" type="radio" value="1" <?php if($mode='add'){ echo 'checked';} ?> <?php if($array['emp_position']=='1'){ echo 'checked' ;} ?>>พนักงาน
+                                                            <input class="radio-checked"  name="emp_position" type="radio" value="0" <?php if($array['emp_position']=='0'){ echo 'checked' ;} ?> >ผู้ดูแลระบบ
                                                         </div>
                                                     </div>
                                                 </div>
@@ -94,7 +94,7 @@ if ($_GET['mode'] == "") {
                                             <div class="form-group-inner">
                                                 <div class="row">
                                                     <div class="col-md-2">
-                                                        <label class="login2 pull-right pull-right-pro">Username</label>
+                                                        <label class="login2 pull-right pull-right-pro">Username<span style="color: red;">*</span></label>
                                                     </div>
                                                     <div class="col-md-9">
                                                         <input type="text" value="<?=$array['emp_user']?>" name="emp_user" class="form-control" required>
@@ -104,7 +104,7 @@ if ($_GET['mode'] == "") {
                                             <div class="form-group-inner">
                                                 <div class="row">
                                                     <div class="col-md-2">
-                                                        <label class="login2 pull-right pull-right-pro">Password</label>
+                                                        <label class="login2 pull-right pull-right-pro">Password<span style="color: red;">*</span></label>
                                                     </div>
                                                     <div class="col-md-9">
                                                         <input type="password" value="<?=$array['emp_pass']?>" name="emp_pass" id="pass1" class="form-control" required>
@@ -114,7 +114,7 @@ if ($_GET['mode'] == "") {
                                             <div class="form-group-inner">
                                                 <div class="row">
                                                     <div class="col-md-2">
-                                                        <label class="login2 pull-right pull-right-pro">กรอก Password อีกครั้ง</label>
+                                                        <label class="login2 pull-right pull-right-pro">Password อีกครั้ง<span style="color: red;">*</span></label>
                                                     </div>
                                                     <div class="col-md-9">
                                                         <input type="password" value="<?=$array['emp_pass']?>" name="emp_pass2" id="pass2" class="form-control" required>

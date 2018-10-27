@@ -51,7 +51,7 @@ if ($_GET['mode'] == "") {
                                             <div class="form-group-inner">
                                                 <div class="row">
                                                     <div class="col-md-2">
-                                                        <label class="login2 pull-right pull-right-pro">ชื่อลูกค้า</label>
+                                                        <label class="login2 pull-right pull-right-pro">ชื่อลูกค้า<span style="color: red;">*</span></label>
                                                     </div>
                                                     <div class="col-md-9">
                                                         <input type="text" value="<?=$array['cus_name']?>" name="cus_name" class="form-control" required>
@@ -81,7 +81,7 @@ if ($_GET['mode'] == "") {
                                             <div class="form-group-inner">
                                                 <div class="row">
                                                     <div class="col-md-2">
-                                                        <label class="login2 pull-right pull-right-pro">Username</label>
+                                                        <label class="login2 pull-right pull-right-pro">Username<span style="color: red;">*</span></label>
                                                     </div>
                                                     <div class="col-md-9">
                                                         <input type="text" value="<?=$array['cus_user']?>" name="cus_user" class="form-control" required>
@@ -91,7 +91,7 @@ if ($_GET['mode'] == "") {
                                             <div class="form-group-inner">
                                                 <div class="row">
                                                     <div class="col-md-2">
-                                                        <label class="login2 pull-right pull-right-pro">Password</label>
+                                                        <label class="login2 pull-right pull-right-pro">Password<span style="color: red;">*</span></label>
                                                     </div>
                                                     <div class="col-md-9">
                                                         <input type="password" value="<?=$array['cus_pass']?>" name="cus_pass" class="form-control" required>

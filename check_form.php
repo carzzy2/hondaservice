@@ -51,7 +51,7 @@ if ($_GET['mode'] == "") {
                                             <div class="form-group-inner">
                                                 <div class="row">
                                                     <div class="col-md-2">
-                                                        <label class="login2 pull-right pull-right-pro">รายการตรวจเช็ค</label>
+                                                        <label class="login2 pull-right pull-right-pro">รายการตรวจเช็ค<span style="color: red;">*</span></label>
                                                     </div>
                                                     <div class="col-md-9">
                                                         <input type="text" value="<?=$array['ch_list']?>" name="ch_list" class="form-control" required>
@@ -61,7 +61,7 @@ if ($_GET['mode'] == "") {
                                             <div class="form-group-inner">
                                                 <div class="row">
                                                     <div class="col-md-2">
-                                                        <label class="login2 pull-right pull-right-pro">ราคา</label>
+                                                        <label class="login2 pull-right pull-right-pro">ราคา<span style="color: red;">*</span></label>
                                                     </div>
                                                     <div class="col-md-9">
                                                         <input type="number" value="<?=$array['ch_price']?>" name="ch_price" class="form-control" required>

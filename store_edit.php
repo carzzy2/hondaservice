@@ -24,30 +24,30 @@ $array = mysqli_fetch_array($query);
                                             <div class="form-group-inner">
                                                 <div class="row">
                                                     <div class="col-md-2">
-                                                        <label class="login2 pull-right pull-right-pro">ชื่อร้าน</label>
+                                                        <label class="login2 pull-right pull-right-pro">ชื่อร้าน<span style="color: red;">*</span></label>
                                                     </div>
                                                     <div class="col-md-9">
-                                                        <input type="text" value="<?=$array['sto_name']?>" name="sto_name" class="form-control">
+                                                        <input type="text" value="<?=$array['sto_name']?>" name="sto_name" class="form-control"  required>
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="form-group-inner">
                                                 <div class="row">
                                                     <div class="col-md-2">
-                                                        <label class="login2 pull-right pull-right-pro">ที่อยู่</label>
+                                                        <label class="login2 pull-right pull-right-pro">ที่อยู่<span style="color: red;">*</span></label>
                                                     </div>
                                                     <div class="col-md-9">
-                                                        <textarea name="sto_add" class="form-control"><?=$array['sto_add']?></textarea>
+                                                        <textarea name="sto_add" class="form-control" required><?=$array['sto_add']?></textarea>
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="form-group-inner">
                                                 <div class="row">
                                                     <div class="col-md-2">
-                                                        <label class="login2 pull-right pull-right-pro">เบอร์โทรศัพท์</label>
+                                                        <label class="login2 pull-right pull-right-pro">เบอร์โทรศัพท์<span style="color: red;">*</span></label>
                                                     </div>
                                                     <div class="col-md-9">
-                                                        <input type="text" value="<?=$array['sto_tel']?>" name="sto_tel" class="form-control">
+                                                        <input type="text" value="<?=$array['sto_tel']?>" name="sto_tel" class="form-control" required>
                                                     </div>
                                                 </div>
                                             </div>

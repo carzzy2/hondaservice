@@ -90,7 +90,7 @@ $sql_login = "select * from employee where emp_id='".$_SESSION['ss_emp_id']."'";
 $result_login = mysqli_query($connect, $sql_login);
 $login = mysqli_fetch_array($result_login);
 if ($login['emp_position'] == "0") {
-    $loginposition = "เจ้าของบริษัท";
+    $loginposition = "ผู้ดูแลระบบ";
 } elseif ($login['emp_position'] == "1") {
     $loginposition = "พนักงาน";
 }

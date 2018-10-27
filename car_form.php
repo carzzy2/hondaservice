@@ -51,7 +51,7 @@ if ($_GET['mode'] == "") {
                                             <div class="form-group-inner">
                                                 <div class="row">
                                                     <div class="col-md-2">
-                                                        <label class="login2 pull-right pull-right-pro">ชื่อรุ่น</label>
+                                                        <label class="login2 pull-right pull-right-pro">ชื่อรุ่น<span style="color: red;">*</span></label>
                                                     </div>
                                                     <div class="col-md-9">
                                                         <input type="text" value="<?=$array['co_carmodel']?>" name="co_carmodel" class="form-control" required>
