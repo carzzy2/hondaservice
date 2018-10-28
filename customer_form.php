@@ -81,6 +81,34 @@ if ($_GET['mode'] == "") {
                                             <div class="form-group-inner">
                                                 <div class="row">
                                                     <div class="col-md-2">
+                                                        <label class="login2 pull-right pull-right-pro">รถ<span style="color: red;">*</span></label>
+                                                    </div>
+                                                    <div class="col-md-9">
+                                                        <div class="chosen-select-single mg-b-20">
+                                                            <select data-placeholder="เลือกรถ..." name="co_id" class="chosen-select" tabindex="-1" style="display: none;" required>
+                                                                <?php
+                                                                $sql2 = "select * from carorder order by co_id asc";
+                                                                $query2 = mysqli_query($connect, $sql2);
+                                                                $select = '';
+                                                                while ($array2 = mysqli_fetch_array($query2)) {
+                                                                    if($array2['co_id']==$array['co_id']){
+                                                                        $select ='selected';
+                                                                    }else{
+                                                                        $select='';
+                                                                    }
+                                                                    ?>
+                                                                    <option value="<?=$array2['co_id']?>" <?=$select?> ><?=$array2['co_carmodel']?></option>
+                                                                    <?php
+                                                                }
+                                                                ?>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-group-inner">
+                                                <div class="row">
+                                                    <div class="col-md-2">
                                                         <label class="login2 pull-right pull-right-pro">Username<span style="color: red;">*</span></label>
                                                     </div>
                                                     <div class="col-md-9">

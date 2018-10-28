@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50714
 File Encoding         : 65001
 
-Date: 2018-10-23 22:57:22
+Date: 2018-10-28 10:03:09
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -122,18 +122,18 @@ CREATE TABLE `customer` (
 -- ----------------------------
 -- Records of customer
 -- ----------------------------
-INSERT INTO `customer` VALUES ('CUS000001', '123444', '123444', 'veeravat', 'vgbhgfh', '0894812345', 'co002');
-INSERT INTO `customer` VALUES ('CUS000002', '123444', '123456', 'วีระวัฒน์', '489ฟกหด', '0594259', 'co001');
-INSERT INTO `customer` VALUES ('CUS000003', '1234564', '1234564', 'วีระวัฒน์', '่ากเ', '่กาส', 'co002');
-INSERT INTO `customer` VALUES ('CUS000004', '12345678', '12345678', 'tantan', '78 ม.6', '987895', 'co002');
-INSERT INTO `customer` VALUES ('CUS000005', 'asdasdsadsa', 'sadsad', 'sadsadsa', 'sadsadsa', 'sadsadsa', 'co002');
-INSERT INTO `customer` VALUES ('CUS000006', 'CafeTaKuMiCafeTaKuMi', '12345678', 'Thanaporn Sermprungsuk', '78 หมู่6 ต.พระลับ อ.เมือง จ.ขอนแก่น 40000', '0992825820', 'co001');
-INSERT INTO `customer` VALUES ('CUS000007', 'CafeTaKuMi02', '12345678', 'asdas', 'dsadsa', 'asdsa', 'co001');
-INSERT INTO `customer` VALUES ('CUS000008', 'engeng', 'engeng', 'Thanaporn', '78 khonkaen', '0992825820', 'co002');
-INSERT INTO `customer` VALUES ('CUS000009', 'jamejame', '2345678', 'jameza', 'khonkaen', '12312321', 'co002');
-INSERT INTO `customer` VALUES ('CUS000010', 'kingking', 'kingking', 'Thanaporn', '78 Khonkaen', '1234567890', 'co001');
-INSERT INTO `customer` VALUES ('CUS000011', 'panupong', '12345678', 'panupong', 'khonkaen', '12345678', 'co002');
-INSERT INTO `customer` VALUES ('CUS000012', 'pornhub2', '12345678', 'Thanaporn2', '78 Khonkaen2', '0658455182', 'co002');
+INSERT INTO `customer` VALUES ('CUS000001', '123444', '123444', 'veeravat', 'vgbhgfh', '0894812345', 'CAR000002');
+INSERT INTO `customer` VALUES ('CUS000002', '123444', '123456', 'วีระวัฒน์', '489ฟกหด', '0594259', 'CAR000003');
+INSERT INTO `customer` VALUES ('CUS000003', '1234564', '1234564', 'วีระวัฒน์', '่ากเ', '่กาส', 'CAR000004');
+INSERT INTO `customer` VALUES ('CUS000004', '12345678', '12345678', 'tantan', '78 ม.6', '987895', 'CAR000003');
+INSERT INTO `customer` VALUES ('CUS000005', 'asdasdsadsa', 'sadsad', 'sadsadsa', 'sadsadsa', 'sadsadsa', 'CAR000001');
+INSERT INTO `customer` VALUES ('CUS000006', 'CafeTaKuMiCafeTaKuMi', '12345678', 'Thanaporn Sermprungsuk', '78 หมู่6 ต.พระลับ อ.เมือง จ.ขอนแก่น 40000', '0992825820', 'CAR000001');
+INSERT INTO `customer` VALUES ('CUS000007', 'CafeTaKuMi02', '12345678', 'asdas', 'dsadsa', 'asdsa', 'CAR000001');
+INSERT INTO `customer` VALUES ('CUS000008', 'engeng', 'engeng', 'Thanaporn', '78 khonkaen', '0992825820', 'CAR000001');
+INSERT INTO `customer` VALUES ('CUS000009', 'jamejame', '2345678', 'jameza', 'khonkaen', '12312321', 'CAR000001');
+INSERT INTO `customer` VALUES ('CUS000010', 'kingking', 'kingking', 'Thanaporn', '78 Khonkaen', '1234567890', 'CAR000001');
+INSERT INTO `customer` VALUES ('CUS000011', 'panupong', '12345678', 'panupong', 'khonkaen', '12345678', 'CAR000001');
+INSERT INTO `customer` VALUES ('CUS000012', 'pornhub2', '12345678', 'Thanaporn2', '78 Khonkaen2', '0658455182', 'CAR000001');
 
 -- ----------------------------
 -- Table structure for employee
@@ -155,8 +155,8 @@ CREATE TABLE `employee` (
 -- ----------------------------
 INSERT INTO `employee` VALUES ('EMP000001', 'admin', '1111', 'Thanaporn Sermprungsuk', '78 หมู่6 ต.พระลับ อ.เมือง จ.ขอนแก่น 40000', '12345678', '0');
 INSERT INTO `employee` VALUES ('EMP000002', 'user', 'user', 'thanaporn', '7878', '12345678', '1');
-INSERT INTO `employee` VALUES ('EMP000003', '12345678', '12345678', 'tasdas', 'ada', '123123', '1');
-INSERT INTO `employee` VALUES ('EMP000004', '1111', '2222', 'พรชัย ภูชัยยัง', '115/8', '0827468287', null);
+INSERT INTO `employee` VALUES ('EMP000004', '1111', '2222', 'พรชัย ภูชัยยัง', '115/8', '0827468287', '1');
+INSERT INTO `employee` VALUES ('EMP000005', 'qqqq', 'wwww', 'asdasd', 'asdasd', '1231231231', '1');
 
 -- ----------------------------
 -- Table structure for listorder

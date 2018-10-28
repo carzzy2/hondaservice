@@ -47,8 +47,9 @@
     ============================================ -->
 <script src="js/sparkline/jquery.sparkline.min.js"></script>
 <script src="js/sparkline/jquery.charts-sparkline.js"></script>
-<!-- calendar JS
-    ============================================ -->
+<script src="js/chosen/chosen.jquery.js"></script>
+<script src="js/chosen/chosen-active.js"></script>
+
 <script src="js/calendar/moment.min.js"></script>
 <script src="js/calendar/fullcalendar.min.js"></script>
 <script src="js/calendar/fullcalendar-active.js"></script>

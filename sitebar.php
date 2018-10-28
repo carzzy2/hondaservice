@@ -32,6 +32,8 @@ if($_SESSION['ss_login'] != session_id() or $_SESSION['ss_emp_id']==NULL ){
     <link rel="stylesheet" href="css/scrollbar/jquery.mCustomScrollbar.min.css">
     <link rel="stylesheet" href="css/metisMenu/metisMenu.min.css">
     <link rel="stylesheet" href="css/metisMenu/metisMenu-vertical.css">
+    <link rel="stylesheet" href="css/chosen/bootstrap-chosen.css">
+    <link rel="stylesheet" href="css/select2/select2.min.css">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="css/responsive.css">
     <link rel="stylesheet" href="css/buttons.css">
