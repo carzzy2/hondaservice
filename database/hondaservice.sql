@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50714
 File Encoding         : 65001
 
-Date: 2018-10-28 10:03:09
+Date: 2018-11-03 16:59:13
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -248,6 +248,51 @@ INSERT INTO `payment` VALUES ('001', '2000', 're01', '001', 'cs01');
 INSERT INTO `payment` VALUES ('002', '520', 're02', '002', 'cs03');
 
 -- ----------------------------
+-- Table structure for purchase_order
+-- ----------------------------
+DROP TABLE IF EXISTS `purchase_order`;
+CREATE TABLE `purchase_order` (
+  `po_id` varchar(30) NOT NULL,
+  `po_date` date DEFAULT NULL,
+  `po_agent` varchar(255) DEFAULT NULL,
+  `po_address` text,
+  `po_tel` varchar(30) DEFAULT NULL,
+  `po_total` varchar(30) DEFAULT NULL,
+  `emp_id` varchar(30) DEFAULT NULL,
+  `po_status` int(1) DEFAULT NULL,
+  PRIMARY KEY (`po_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of purchase_order
+-- ----------------------------
+INSERT INTO `purchase_order` VALUES ('POR000001', '2018-11-03', 'sdfsdf', 'fsdfsdf', 'sdfsdfsd', '1060', 'EMP000002', '1');
+INSERT INTO `purchase_order` VALUES ('POR000002', '2018-11-03', 'asdasdasd', 'sdasdasd', 'asdasda', '240', 'EMP000002', '1');
+INSERT INTO `purchase_order` VALUES ('POR000003', '2018-11-03', 'asasd', 'ddddd', 'dddd', '1700', 'EMP000002', '0');
+
+-- ----------------------------
+-- Table structure for purchase_order_list
+-- ----------------------------
+DROP TABLE IF EXISTS `purchase_order_list`;
+CREATE TABLE `purchase_order_list` (
+  `po_id` varchar(30) DEFAULT NULL,
+  `sp_id` varchar(30) DEFAULT NULL,
+  `po_num` int(10) DEFAULT NULL,
+  `po_price` varchar(30) DEFAULT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of purchase_order_list
+-- ----------------------------
+INSERT INTO `purchase_order_list` VALUES ('POR000001', 'SPR000001', '3', '20');
+INSERT INTO `purchase_order_list` VALUES ('POR000001', 'SPR000002', '6', '100');
+INSERT INTO `purchase_order_list` VALUES ('POR000001', 'SPR000003', '2', '200');
+INSERT INTO `purchase_order_list` VALUES ('POR000002', 'SPR000001', '2', '20');
+INSERT INTO `purchase_order_list` VALUES ('POR000002', 'SPR000002', '2', '100');
+INSERT INTO `purchase_order_list` VALUES ('POR000003', 'SPR000004', '1', '1500');
+INSERT INTO `purchase_order_list` VALUES ('POR000003', 'SPR000003', '1', '200');
+
+-- ----------------------------
 -- Table structure for repair
 -- ----------------------------
 DROP TABLE IF EXISTS `repair`;
@@ -314,10 +359,10 @@ CREATE TABLE `spareparts` (
 -- ----------------------------
 -- Records of spareparts
 -- ----------------------------
-INSERT INTO `spareparts` VALUES ('SPR000001', 'ฟันเฟือง', 'เป็นชิ้นส่วนเครื่องจักร', '20', '279');
-INSERT INTO `spareparts` VALUES ('SPR000002', 'น้ำมันเครื่อง', 'ใช้เมื่อหมดจะสต้าทรถไม่ติด', '100', '97');
-INSERT INTO `spareparts` VALUES ('SPR000003', 'ไฟเลี้ยว', 'ใช้เป็นสัญญาณจราจร', '200', '66');
-INSERT INTO `spareparts` VALUES ('SPR000004', 'คาบู', 'คาบูตรา หมาทีบลูกบอล ใช้วัสดุระดับ Hight-end ช่วยให้เร่งความเร็วได้สูงงงงง', '1500', '0');
+INSERT INTO `spareparts` VALUES ('SPR000001', 'ฟันเฟือง', 'เป็นชิ้นส่วนเครื่องจักร', '20', '2');
+INSERT INTO `spareparts` VALUES ('SPR000002', 'น้ำมันเครื่อง', 'ใช้เมื่อหมดจะสต้าทรถไม่ติด', '100', '8');
+INSERT INTO `spareparts` VALUES ('SPR000003', 'ไฟเลี้ยว', 'ใช้เป็นสัญญาณจราจร', '200', '2');
+INSERT INTO `spareparts` VALUES ('SPR000004', 'คาบู', 'คาบูตรา หมาทีบลูกบอล ใช้วัสดุระดับ Hight-end ช่วยให้เร่งความเร็วได้สูงงงงง', '1500', '2');
 
 -- ----------------------------
 -- Table structure for store

@@ -18,9 +18,9 @@ function getMillisecTime() {
     return $mst;
 }
 function FormatDay($mydate){
-    $d=split("-",$mydate);
-    $mydate=$d[2]."/".$d[1]."/".($d[0]+543);
-    return "$mydate";
+    $originalDate = $mydate;
+    $newDate = date("d/m/Y", strtotime($originalDate));
+    return $newDate;
 }
 
 ?>
