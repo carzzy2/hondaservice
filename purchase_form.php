@@ -138,8 +138,10 @@ if ($newid['MaxID'] == "") {
         });
         $(".addList").click(function () {
             var url = $(this).attr('data-url');
+            var data = $('form').serializeArray();
             $.ajax({
-                type: "GET",
+                type: "POST",
+                data:data,
                 url: url,
                 success: function (result) {
                     $("#data-list").html(result);

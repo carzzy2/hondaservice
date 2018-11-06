@@ -1,7 +1,12 @@
 <?php
 session_start();
 include "config.php";
-if($_GET['mode']=="add"){
+if(!empty($_POST['po_count'])){
+    foreach ($_SESSION['ss_sp_id'] as $key => $val) {
+        $_SESSION['ss_sp_num'][$key] = $_POST['po_count'][$key];
+    }
+}
+if($_GET['mode']=="add"){// add item
     if (count($_SESSION['ss_sp_id']) == 0) {
         $_SESSION['ss_sp_id'][]=$_GET['id'];
         $_SESSION['ss_sp_num'][]=1;
@@ -15,7 +20,7 @@ if($_GET['mode']=="add"){
         }
 
     }
-}elseif($_GET['mode']=="del"){// delete listdata
+}elseif($_GET['mode']=="del"){// delete item
     foreach ($_SESSION['ss_sp_id'] as $key => $val){
         if($val==$_GET['id']){
             unset($_SESSION['ss_sp_id'][$key]);
@@ -67,7 +72,6 @@ if($_GET['mode']=="add"){
                     </td>
                 </tr>
                 <?php
-                $i++;
             }
         }
         ?>
