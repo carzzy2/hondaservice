@@ -15,6 +15,7 @@ if($_POST['mode']=="add"){
             values('" . $_POST['cus_id'] . "','" . $_POST['cus_name'] . "','" . $_POST['cus_add'] . "',
             '" . $_POST['cus_tel'] . "','" . $_POST['cus_user'] . "','" . $_POST['cus_pass'] . "','" . $_POST['co_id'] . "')";
     mysqli_query($connect, $sql);
+    echo "<script>alert('เพิ่มข้อมูลเรียบร้อย');</script>";
 }elseif($_POST['mode']=="edit"){
     $sql = "update customer set cus_name='" . $_POST['cus_name'] . "',cus_add='" . $_POST['cus_add'] . "',
             cus_tel='" . $_POST['cus_tel'] . "',cus_user='" . $_POST['cus_user'] . "',cus_pass='" . $_POST['cus_pass'] . "',co_id='" . $_POST['co_id'] . "'
@@ -24,6 +25,7 @@ if($_POST['mode']=="add"){
 }elseif($_GET['mode']=="delete"){
     $sql = "delete from customer where cus_id='" . $_GET['id'] . "'";
     mysqli_query($connect, $sql);
+    echo "<script>alert('ลบข้อมูลเรียบร้อย');</script>";
 }
 echo "<meta http-equiv='refresh' content='0;URL=customer_list.php'>";
 ?>

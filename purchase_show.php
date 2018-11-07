@@ -50,9 +50,9 @@ unset($_SESSION['ss_sp_num']);
                     <?php
                     $n = 0;
                     if (isset($_GET['search'])) {
-                        $sql = "select * from purchase_order where po_id like '%" . $_GET['po_id'] . "%'  order by po_id asc";
+                        $sql = "select * from purchase_order where po_id like '%" . $_GET['po_id'] . "%'  order by po_status asc";
                     } else {
-                        $sql = "select * from purchase_order order by po_id asc";
+                        $sql = "select * from purchase_order order by po_status asc";
                     }
                     $query = mysqli_query($connect, $sql);
                     if (mysqli_num_rows($query) > 0 ) {

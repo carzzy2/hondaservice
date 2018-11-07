@@ -15,6 +15,7 @@ if ($row == 0) {
     $data = mysqli_fetch_array($query);
     $_SESSION['ss_login'] = session_id();
     $_SESSION['ss_emp_id'] = $data['emp_id'];
+    echo "<script>alert('เข้ารู้ระบบเรียบร้อยแล้ว');</script>";
     echo "<meta http-equiv='refresh' content='0;URL=index.php'>";
 }
 ?>

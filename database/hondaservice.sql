@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50714
 File Encoding         : 65001
 
-Date: 2018-11-06 23:04:03
+Date: 2018-11-07 23:05:29
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -270,9 +270,10 @@ INSERT INTO `purchase_order` VALUES ('POR000001', '2018-11-03', 'sdfsdf', 'fsdfs
 INSERT INTO `purchase_order` VALUES ('POR000002', '2018-11-03', 'asdasdasd', 'sdasdasd', 'asdasda', '240', 'EMP000002', '1');
 INSERT INTO `purchase_order` VALUES ('POR000003', '2018-11-03', 'asasd', 'ddddd', 'dddd', '1700', 'EMP000002', '1');
 INSERT INTO `purchase_order` VALUES ('POR000004', '2018-11-04', 'bc', 'vcbcvb', 'bcvbcvbc', '5100', 'EMP000002', '1');
-INSERT INTO `purchase_order` VALUES ('POR000005', '2018-11-04', 'dfsdfsdf', 'ghjghj', '0824447586', '180', 'EMP000002', '0');
-INSERT INTO `purchase_order` VALUES ('POR000006', '2018-11-06', 'adas', 'asdasd', 'asdasd', '2280', 'EMP000002', '0');
+INSERT INTO `purchase_order` VALUES ('POR000005', '2018-11-04', 'dfsdfsdf', 'ghjghj', '0824447586', '180', 'EMP000002', '1');
+INSERT INTO `purchase_order` VALUES ('POR000006', '2018-11-06', 'adas', 'asdasd', 'asdasd', '2280', 'EMP000002', '1');
 INSERT INTO `purchase_order` VALUES ('POR000007', '2018-11-06', 'asdasd', 'asdasdasd', 'asdasd', '120', 'EMP000002', '0');
+INSERT INTO `purchase_order` VALUES ('POR000008', '2018-11-07', 'ฟหกฟห', 'ฟหกฟหก', 'ฟหกฟหก', '500', 'EMP000001', '0');
 
 -- ----------------------------
 -- Table structure for purchase_order_list
@@ -305,6 +306,7 @@ INSERT INTO `purchase_order_list` VALUES ('POR000006', 'SPR000003', '2', '200');
 INSERT INTO `purchase_order_list` VALUES ('POR000006', 'SPR000004', '1', '1500');
 INSERT INTO `purchase_order_list` VALUES ('POR000007', 'SPR000001', '1', '20');
 INSERT INTO `purchase_order_list` VALUES ('POR000007', 'SPR000002', '1', '100');
+INSERT INTO `purchase_order_list` VALUES ('POR000008', 'SPR000002', '5', '100');
 
 -- ----------------------------
 -- Table structure for repair
@@ -349,8 +351,7 @@ INSERT INTO `reservation` VALUES ('28', 'asd', '2018-08-30', 'ยืนยัน
 INSERT INTO `reservation` VALUES ('29', 'หาตั้งนาน', '2018-08-30', 'ยืนยันการจองแล้ว', 'CUS000004');
 INSERT INTO `reservation` VALUES ('30', 'ลองใหม่', '2018-08-31', 'ยืนยันการจองแล้ว', 'CUS000005');
 INSERT INTO `reservation` VALUES ('31', '555+ss', '2018-08-31', 'ยืนยันการจองแล้ว', 'CUS000006');
-INSERT INTO `reservation` VALUES ('32', 'tantan', '2018-09-24', 'ยืนยันการจองแล้ว', 'CUS000007');
-INSERT INTO `reservation` VALUES ('34', 'แอลจองนะ', '2018-10-24', 'ยืนยันการจองแล้ว', 'CUS000009');
+INSERT INTO `reservation` VALUES ('34', 'แอลจองนะ', '2018-10-24', 'ยังไม่ยืนยันการจอง', 'CUS000009');
 INSERT INTO `reservation` VALUES ('35', 'รุ่นรอง', '2018-11-26', 'ยังไม่ยืนยันการจอง', 'CUS000010');
 INSERT INTO `reservation` VALUES ('36', 'บิ๊กไบสีแดง', '2018-12-01', 'ยังไม่ยืนยันการจอง', 'CUS000011');
 INSERT INTO `reservation` VALUES ('37', 'X56', '2018-10-04', 'ยังไม่ยืนยันการจอง', 'CUS000012');
@@ -372,9 +373,9 @@ CREATE TABLE `spareparts` (
 -- Records of spareparts
 -- ----------------------------
 INSERT INTO `spareparts` VALUES ('SPR000001', 'ฟันเฟือง', 'เป็นชิ้นส่วนเครื่องจักร', '20', '2');
-INSERT INTO `spareparts` VALUES ('SPR000002', 'น้ำมันเครื่อง', 'ใช้เมื่อหมดจะสต้าทรถไม่ติด', '100', '8');
-INSERT INTO `spareparts` VALUES ('SPR000003', 'ไฟเลี้ยว', 'ใช้เป็นสัญญาณจราจร', '200', '3');
-INSERT INTO `spareparts` VALUES ('SPR000004', 'คาบู', 'คาบูตรา หมาทีบลูกบอล ใช้วัสดุระดับ Hight-end ช่วยให้เร่งความเร็วได้สูงงงงง', '1500', '5');
+INSERT INTO `spareparts` VALUES ('SPR000002', 'น้ำมันเครื่อง', 'ใช้เมื่อหมดจะสต้าทรถไม่ติด', '100', '12');
+INSERT INTO `spareparts` VALUES ('SPR000003', 'ไฟเลี้ยว', 'ใช้เป็นสัญญาณจราจร', '200', '5');
+INSERT INTO `spareparts` VALUES ('SPR000004', 'คาบู', 'คาบูตรา หมาทีบลูกบอล ใช้วัสดุระดับ Hight-end ช่วยให้เร่งความเร็วได้สูงงงงง', '1500', '6');
 
 -- ----------------------------
 -- Table structure for store

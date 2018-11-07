@@ -9,6 +9,6 @@ if ($_GET['mode'] == 'add') {
 } elseif ($_GET['mode'] == "delete") {
     $sql = "delete from reservation where rs_id='" . $_GET['id'] . "'";
     $query = mysqli_query($connect, $sql);
-
+    echo "<script>alert('ลบข้อมูลเรียบร้อย');</script>";
     echo "<META http-equiv='refresh' Content='0; URL=reservation_list.php'> ";
 }
