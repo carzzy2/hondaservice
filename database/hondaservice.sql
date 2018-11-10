@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50714
 File Encoding         : 65001
 
-Date: 2018-11-07 23:05:29
+Date: 2018-11-11 00:39:26
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -54,7 +54,7 @@ CREATE TABLE `carorder` (
   `co_carmodel` varchar(50) NOT NULL,
   `co_description` text NOT NULL,
   PRIMARY KEY (`co_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='ข้อมูลรถ';
 
 -- ----------------------------
 -- Records of carorder
@@ -117,7 +117,7 @@ CREATE TABLE `customer` (
   `co_id` varchar(30) DEFAULT NULL,
   PRIMARY KEY (`cus_id`),
   KEY `co_id` (`co_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='ข้อมูลลูกค้า';
 
 -- ----------------------------
 -- Records of customer
@@ -148,7 +148,7 @@ CREATE TABLE `employee` (
   `emp_tel` varchar(30) DEFAULT NULL,
   `emp_position` varchar(30) DEFAULT NULL,
   PRIMARY KEY (`emp_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='ข้อมูลพนักงาน';
 
 -- ----------------------------
 -- Records of employee
@@ -157,6 +157,30 @@ INSERT INTO `employee` VALUES ('EMP000001', 'admin', '1111', 'Thanaporn Sermprun
 INSERT INTO `employee` VALUES ('EMP000002', 'user', 'user', 'thanaporn', '7878', '12345678', '1');
 INSERT INTO `employee` VALUES ('EMP000004', '1111', '2222', 'พรชัย ภูชัยยัง', '115/8', '0827468287', '1');
 INSERT INTO `employee` VALUES ('EMP000005', 'qqqq', 'wwww', 'asdasd', 'asdasd', '1231231231', '1');
+
+-- ----------------------------
+-- Table structure for get_car
+-- ----------------------------
+DROP TABLE IF EXISTS `get_car`;
+CREATE TABLE `get_car` (
+  `gc_id` varchar(30) NOT NULL,
+  `gc_date` date DEFAULT NULL,
+  `gc_doc` varchar(50) DEFAULT NULL,
+  `gc_text` varchar(50) DEFAULT NULL,
+  `cus_id` varchar(30) DEFAULT NULL,
+  `rs_id` varchar(30) DEFAULT NULL,
+  `co_id` varchar(30) DEFAULT NULL,
+  `gc_status` int(1) DEFAULT NULL,
+  PRIMARY KEY (`gc_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COMMENT='รับรถเข้ารับบริการ';
+
+-- ----------------------------
+-- Records of get_car
+-- ----------------------------
+INSERT INTO `get_car` VALUES ('GEC000001', '2018-11-10', 'asdasd', 'asdasd', 'CUS000001', '21', 'CAR000002', '1');
+INSERT INTO `get_car` VALUES ('GEC000002', '2018-11-11', 'FDGDFG', 'DFGDFG', 'CUS000002', '27', 'CAR000003', '0');
+INSERT INTO `get_car` VALUES ('GEC000003', '2018-11-11', 'fdrgdfg', 'dfgdfg', 'CUS000003', '28', 'CAR000004', '0');
+INSERT INTO `get_car` VALUES ('GEC000004', '2018-11-11', 'dfgdfg', 'dfgdfg', 'CUS000004', '29', 'CAR000003', '0');
 
 -- ----------------------------
 -- Table structure for listorder
@@ -261,7 +285,7 @@ CREATE TABLE `purchase_order` (
   `emp_id` varchar(30) DEFAULT NULL,
   `po_status` int(1) DEFAULT NULL,
   PRIMARY KEY (`po_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='สั่งซื้ออะไหล่';
 
 -- ----------------------------
 -- Records of purchase_order
@@ -284,7 +308,7 @@ CREATE TABLE `purchase_order_list` (
   `sp_id` varchar(30) DEFAULT NULL,
   `po_num` int(10) DEFAULT NULL,
   `po_price` varchar(30) DEFAULT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COMMENT='รายการสั่งซื้ออะไหล่';
 
 -- ----------------------------
 -- Records of purchase_order_list
@@ -340,19 +364,19 @@ CREATE TABLE `reservation` (
   `cus_id` varchar(50) NOT NULL,
   PRIMARY KEY (`rs_id`),
   KEY `cus_id` (`cus_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='จอง';
 
 -- ----------------------------
 -- Records of reservation
 -- ----------------------------
-INSERT INTO `reservation` VALUES ('21', 'ss', '2018-08-30', 'ยืนยันการจองแล้ว', 'CUS000001');
-INSERT INTO `reservation` VALUES ('27', 'หฟก', '2018-08-30', 'ยืนยันการจองแล้ว', 'CUS000002');
-INSERT INTO `reservation` VALUES ('28', 'asd', '2018-08-30', 'ยืนยันการจองแล้ว', 'CUS000003');
-INSERT INTO `reservation` VALUES ('29', 'หาตั้งนาน', '2018-08-30', 'ยืนยันการจองแล้ว', 'CUS000004');
+INSERT INTO `reservation` VALUES ('21', 'ss', '2018-08-30', 'นำรถเข้ารับบริการแล้ว', 'CUS000001');
+INSERT INTO `reservation` VALUES ('27', 'หฟก', '2018-08-30', 'นำรถเข้ารับบริการแล้ว', 'CUS000002');
+INSERT INTO `reservation` VALUES ('28', 'asd', '2018-08-30', 'นำรถเข้ารับบริการแล้ว', 'CUS000003');
+INSERT INTO `reservation` VALUES ('29', 'หาตั้งนาน', '2018-08-30', 'นำรถเข้ารับบริการแล้ว', 'CUS000004');
 INSERT INTO `reservation` VALUES ('30', 'ลองใหม่', '2018-08-31', 'ยืนยันการจองแล้ว', 'CUS000005');
 INSERT INTO `reservation` VALUES ('31', '555+ss', '2018-08-31', 'ยืนยันการจองแล้ว', 'CUS000006');
-INSERT INTO `reservation` VALUES ('34', 'แอลจองนะ', '2018-10-24', 'ยังไม่ยืนยันการจอง', 'CUS000009');
-INSERT INTO `reservation` VALUES ('35', 'รุ่นรอง', '2018-11-26', 'ยังไม่ยืนยันการจอง', 'CUS000010');
+INSERT INTO `reservation` VALUES ('34', 'แอลจองนะ', '2018-10-24', 'ยืนยันการจองแล้ว', 'CUS000009');
+INSERT INTO `reservation` VALUES ('35', 'รุ่นรอง', '2018-11-26', 'ยืนยันการจองแล้ว', 'CUS000010');
 INSERT INTO `reservation` VALUES ('36', 'บิ๊กไบสีแดง', '2018-12-01', 'ยังไม่ยืนยันการจอง', 'CUS000011');
 INSERT INTO `reservation` VALUES ('37', 'X56', '2018-10-04', 'ยังไม่ยืนยันการจอง', 'CUS000012');
 
@@ -367,7 +391,7 @@ CREATE TABLE `spareparts` (
   `sp_price` varchar(30) DEFAULT NULL,
   `sp_num` varchar(30) DEFAULT NULL,
   PRIMARY KEY (`sp_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='ข้อมูลอะไหล่';
 
 -- ----------------------------
 -- Records of spareparts
@@ -388,7 +412,7 @@ CREATE TABLE `store` (
   `sto_tel` varchar(30) NOT NULL,
   `sto_description` text NOT NULL,
   PRIMARY KEY (`sto_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='ข้อมูลร้าน';
 
 -- ----------------------------
 -- Records of store
