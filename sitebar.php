@@ -128,6 +128,7 @@ if ($login['emp_position'] == "0") {
 
                     <li><a href="get_car_list.php" aria-expanded="false"><i class="fa big-icon fa-table icon-wrap" aria-hidden="true"></i><span class="mini-click-non">นำรถเข้ารับบริการ</span></a></li>
                     <li><a href="quene_list.php" aria-expanded="false"><i class="fa big-icon fa-table icon-wrap" aria-hidden="true"></i><span class="mini-click-non">จัดคิวเข้ารับบริการ</span></a></li>
+                    <li><a href="repair_show.php" aria-expanded="false"><i class="fa big-icon fa-table icon-wrap" aria-hidden="true"></i><span class="mini-click-non">บันทึกการซ่อม</span></a></li>
                 </ul>
             </nav>
         </div>
