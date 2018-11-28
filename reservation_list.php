@@ -24,7 +24,7 @@
                                 from reservation where rs_status='ยังไม่ยืนยันการจอง' and  rs_id like '%" . $_GET['search'] . "%' order by rs_id asc";
                     } else {
                         $sql = "select *,date(rs_date) as `date`,time(rs_date) as `time`,date(rs_datereal) as `datereal`,time(rs_datereal) as `timereal`
-                                from reservation where rs_status='ยังไม่ยืนยันการจอง' order by rs_id asc";
+                                from reservation where rs_status='ยังไม่ยืนยันการจอง' and date(rs_date) >= CURDATE() order by rs_id asc";
                     }
                     $query = mysqli_query($connect, $sql);
                     if (mysqli_num_rows($query) > 0 ) {

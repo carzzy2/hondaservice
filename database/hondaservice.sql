@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50723
 File Encoding         : 65001
 
-Date: 2018-11-28 20:18:21
+Date: 2018-11-28 20:41:26
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -423,7 +423,7 @@ INSERT INTO `reservation` VALUES ('35', 'รุ่นรอง', '2018-11-26 09:
 INSERT INTO `reservation` VALUES ('36', 'บิ๊กไบสีแดง', '2018-12-01 09:04:00', '2018-11-27 23:31:34', 'ยืนยันการจองแล้ว', 'CUS000011');
 INSERT INTO `reservation` VALUES ('37', 'X56', '2018-10-04 13:00:00', '2018-10-01 23:29:53', 'ยืนยันการจองแล้ว', 'CUS000012');
 INSERT INTO `reservation` VALUES ('38', 'รถเสีย ไฟหน้าแตก', '2018-11-20 12:00:00', '2018-11-05 23:29:45', 'ยังไม่ยืนยันการจอง', 'CUS000004');
-INSERT INTO `reservation` VALUES ('39', 'รถเสีย', '2018-11-26 09:04:00', '2018-11-26 16:04:13', 'ยกเลิกการจองแล้ว', 'CUS000001');
+INSERT INTO `reservation` VALUES ('39', 'รถเสีย', '2018-11-29 09:04:00', '2018-11-26 16:04:13', 'ยังไม่ยืนยันการจอง', 'CUS000001');
 
 -- ----------------------------
 -- Table structure for spareparts
