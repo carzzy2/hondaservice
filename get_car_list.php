@@ -10,7 +10,8 @@
                     <tr>
                         <th class="text-center">#</th>
                         <th class="text-center">ชื่อลูกค้า</th>
-                        <th class="text-center">วันที่จอง</th>
+                        <th class="text-center">วัน-เวลา ที่บันทึกข้อมูล</th>
+                        <th class="text-center">วัน-เวลา ที่จอง</th>
                         <th class="text-center">รายละเอียด</th>
                         <th class="text-center">จัดการข้อมูล</th>
                     </tr>
@@ -19,9 +20,11 @@
                     <?php
                     $n = 0;
                     if (isset($_GET['search'])) {
-                        $sql = "select * from reservation where rs_status='ยืนยันการจองแล้ว' and  rs_id like '%" . $_GET['search'] . "%' order by rs_id asc";
+                        $sql = "select *,date(rs_date) as `date`,time(rs_date) as `time`,date(rs_datereal) as `datereal`,time(rs_datereal) as `timereal`
+                                from reservation where rs_status='ยืนยันการจองแล้ว' and  rs_id like '%" . $_GET['search'] . "%' order by rs_id asc";
                     } else {
-                        $sql = "select * from reservation where rs_status='ยืนยันการจองแล้ว' order by rs_id asc";
+                        $sql = "select *,date(rs_date) as `date`,time(rs_date) as `time`,date(rs_datereal) as `datereal`,time(rs_datereal) as `timereal` 
+                                from reservation where rs_status='ยืนยันการจองแล้ว' order by rs_id asc";
                     }
                     $query = mysqli_query($connect, $sql);
                     if (mysqli_num_rows($query) > 0 ) {
@@ -34,7 +37,8 @@
                             <tr>
                                 <td class="text-center" scope="row"><?= $n; ?></td>
                                 <td style="max-width: 200px">คุณ<?= $array2['cus_name'] ?></td>
-                                <td class="text-center"><?= FormatDay($array['rs_date']) ?></td>
+                                <td class="text-center"><?= FormatDay($array['rs_datereal']) ?> <?= $array['timereal'] ?></td>
+                                <td class="text-center"><?= FormatDay($array['date']) ?> <?= $array['time'] ?></td>
                                 <td><?= $array['rs_description'] ?></td>
                                 <td class="text-center">
                                     <a data-toggle="tooltip" href="get_car_form.php?id=<?= $array['rs_id'] ?>" class="btn btn-default" data-original-title="Confirm"><i class="fa fa-check-circle" aria-hidden="true"> รับรถ</i></a>
@@ -45,7 +49,7 @@
                     } else {
                         ?>
                         <tr>
-                            <th style="text-align: center;color: red;" colspan="5"> ไม่พบข้อมูล</th>
+                            <th style="text-align: center;color: red;" colspan="6"> ไม่พบข้อมูล</th>
                         </tr>
                         <?php
                     }

@@ -15,6 +15,7 @@ unset($_SESSION['ss_ch_id']);
                     <thead>
                     <tr>
                         <th class="text-center">#</th>
+                        <th class="text-center">รหัส</th>
                         <th class="text-center">ชื่อลูกค้า</th>
                         <th class="text-center">วันทีนำรถเข้ารับบริการ</th>
                         <th class="text-center">ทะเบียนรถ</th>
@@ -40,6 +41,7 @@ unset($_SESSION['ss_ch_id']);
                             ?>
                             <tr>
                                 <td class="text-center" scope="row"><?= $n; ?></td>
+                                <td style="max-width: 200px"><?= $array['gc_id'] ?></td>
                                 <td style="max-width: 200px">คุณ<?= $array2['cus_name'] ?></td>
                                 <td style="max-width: 200px" class="text-center"><?= FormatDay($array['gc_date']) ?></td>
                                 <td><?= $array['gc_doc'] ?></td>

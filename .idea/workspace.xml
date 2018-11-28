@@ -1,7 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0d1d1389-6845-4a44-9355-225853cc446a" name="Default Changelist" comment="" />
+    <list default="true" id="0d1d1389-6845-4a44-9355-225853cc446a" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api_customer.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/get_car_list.php" beforeDir="false" afterPath="$PROJECT_DIR$/get_car_list.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/quene_list.php" beforeDir="false" afterPath="$PROJECT_DIR$/quene_list.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/repair_show.php" beforeDir="false" afterPath="$PROJECT_DIR$/repair_show.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reservation_list.php" beforeDir="false" afterPath="$PROJECT_DIR$/reservation_list.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reservation_save.php" beforeDir="false" afterPath="$PROJECT_DIR$/reservation_save.php" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,90 +36,41 @@
     </expand>
     <select />
   </component>
-  <component name="FUSProjectUsageTrigger">
-    <session id="726999380">
-      <usages-collector id="statistics.lifecycle.project">
-        <counts>
-          <entry key="project.closed" value="25" />
-          <entry key="project.open.time.140" value="1" />
-          <entry key="project.open.time.17" value="1" />
-          <entry key="project.open.time.30" value="1" />
-          <entry key="project.open.time.33" value="1" />
-          <entry key="project.open.time.36" value="1" />
-          <entry key="project.open.time.37" value="3" />
-          <entry key="project.open.time.39" value="2" />
-          <entry key="project.open.time.43" value="1" />
-          <entry key="project.open.time.44" value="1" />
-          <entry key="project.open.time.45" value="2" />
-          <entry key="project.open.time.46" value="1" />
-          <entry key="project.open.time.48" value="2" />
-          <entry key="project.open.time.49" value="1" />
-          <entry key="project.open.time.50" value="1" />
-          <entry key="project.open.time.51" value="1" />
-          <entry key="project.open.time.52" value="1" />
-          <entry key="project.open.time.55" value="1" />
-          <entry key="project.open.time.67" value="1" />
-          <entry key="project.open.time.9" value="1" />
-          <entry key="project.opened" value="24" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.extensions.open">
-        <counts>
-          <entry key="css" value="3" />
-          <entry key="php" value="156" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.types.open">
-        <counts>
-          <entry key="CSS" value="3" />
-          <entry key="PHP" value="156" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.extensions.edit">
-        <counts>
-          <entry key="css" value="19" />
-          <entry key="php" value="8032" />
-          <entry key="txt" value="159" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.types.edit">
-        <counts>
-          <entry key="CSS" value="19" />
-          <entry key="PHP" value="8024" />
-          <entry key="PLAIN_TEXT" value="159" />
-          <entry key="SQL" value="8" />
-        </counts>
-      </usages-collector>
-    </session>
-  </component>
   <component name="FavoritesManager">
     <favorites_list name="hondaservice" />
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/employee_save.php">
+        <entry file="file://$PROJECT_DIR$/reservation_list.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="512">
-              <caret line="63" column="33" selection-start-line="63" selection-start-column="33" selection-end-line="63" selection-end-column="33" />
+            <state relative-caret-position="389">
+              <caret line="44" column="291" selection-start-line="44" selection-start-column="291" selection-end-line="44" selection-end-column="291" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/customer_save.php">
+        <entry file="file://$PROJECT_DIR$/quene_list.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="286">
-              <caret line="26" column="4" selection-start-line="26" selection-start-column="4" selection-end-line="38" selection-end-column="5" />
+            <state relative-caret-position="538">
+              <caret line="37" column="32" selection-start-line="37" selection-start-column="32" selection-end-line="37" selection-end-column="88" />
+              <folding>
+                <element signature="n#style#0;n#td#1;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#td#1;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/spareparts_save.php">
+        <entry file="file://$PROJECT_DIR$/repair_show.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="480">
-              <caret line="30" column="57" selection-start-line="30" selection-start-column="57" selection-end-line="30" selection-end-column="57" />
+            <state relative-caret-position="557">
+              <caret line="43" column="88" selection-start-line="43" selection-start-column="88" selection-end-line="43" selection-end-column="88" />
+              <folding>
+                <element signature="n#style#0;n#td#1;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -188,39 +148,33 @@
         <option value="$PROJECT_DIR$/puchase_save.php" />
         <option value="$PROJECT_DIR$/back_purchase_list.php" />
         <option value="$PROJECT_DIR$/back_purchase_form.php" />
-        <option value="$PROJECT_DIR$/reservation_list.php" />
         <option value="$PROJECT_DIR$/purchase_form.php" />
         <option value="$PROJECT_DIR$/purchase_form_list.php" />
         <option value="$PROJECT_DIR$/signin.php" />
         <option value="$PROJECT_DIR$/store_save.php" />
         <option value="$PROJECT_DIR$/purchase_show.php" />
-        <option value="$PROJECT_DIR$/reservation_save.php" />
         <option value="$PROJECT_DIR$/back_purchase_save.php" />
         <option value="$PROJECT_DIR$/get_car.php" />
         <option value="$PROJECT_DIR$/get_car_form.php" />
-        <option value="$PROJECT_DIR$/get_car_list.php" />
         <option value="$PROJECT_DIR$/get_car_save.php" />
-        <option value="$PROJECT_DIR$/quene_list.php" />
         <option value="$PROJECT_DIR$/quene_save.php" />
         <option value="$PROJECT_DIR$/sitebar.php" />
         <option value="$PROJECT_DIR$/repair_con.php" />
         <option value="$PROJECT_DIR$/repair_form_list.php" />
         <option value="$PROJECT_DIR$/repair_form.php" />
-        <option value="$PROJECT_DIR$/repair_show.php" />
         <option value="$PROJECT_DIR$/repair_save.php" />
         <option value="$PROJECT_DIR$/employee_save.php" />
         <option value="$PROJECT_DIR$/customer_save.php" />
         <option value="$PROJECT_DIR$/car_save.php" />
         <option value="$PROJECT_DIR$/check_save.php" />
         <option value="$PROJECT_DIR$/spareparts_save.php" />
+        <option value="$PROJECT_DIR$/reservation_save.php" />
+        <option value="$PROJECT_DIR$/get_car_list.php" />
+        <option value="$PROJECT_DIR$/reservation_list.php" />
+        <option value="$PROJECT_DIR$/quene_list.php" />
+        <option value="$PROJECT_DIR$/repair_show.php" />
       </list>
     </option>
-  </component>
-  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
-  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
-  <component name="JsGulpfileManager">
-    <detection-done>true</detection-done>
-    <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="100" />
@@ -251,7 +205,7 @@
   <component name="PropertiesComponent">
     <property name="DatabaseDriversLRU" value="mysql" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../betahouse" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
   </component>
   <component name="RecentsManager">
@@ -305,6 +259,8 @@
       <workItem from="1542289788575" duration="666000" />
       <workItem from="1542295198686" duration="595000" />
       <workItem from="1542422557028" duration="6845000" />
+      <workItem from="1543334743792" duration="103000" />
+      <workItem from="1543408965711" duration="2106000" />
     </task>
     <task id="LOCAL-00001" summary="add ข้อมูลร้าน-ลูกค้า">
       <created>1540135406072</created>
@@ -345,13 +301,13 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="85302000" />
+    <option name="totallyTimeSpent" value="87511000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1616" height="886" extended-state="6" />
+    <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.499336" visible="true" weight="0.1773779" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.499336" visible="true" weight="0.18123393" />
       <window_info id="Structure" order="1" sideWeight="0.500664" side_tool="true" weight="0.2114396" />
       <window_info id="Favorites" order="2" sideWeight="0.500664" side_tool="true" weight="0.2114396" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -385,9 +341,6 @@
         <option value="1" />
       </list>
     </option>
-  </component>
-  <component name="VcsContentAnnotationSettings">
-    <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="add ข้อมูลร้าน-ลูกค้า" />
@@ -461,19 +414,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../betahouse/backend/back_order.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-336" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../betahouse/backend/back_order_1.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-106" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../betahouse/backend/order2.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/../betahouse/backend/back_order.php" />
+    <entry file="file://$PROJECT_DIR$/../betahouse/backend/back_order_1.php" />
+    <entry file="file://$PROJECT_DIR$/../betahouse/backend/order2.php" />
     <entry file="file://$PROJECT_DIR$/employee_form.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="224">
@@ -537,13 +480,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/reservation_list.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="560">
-          <caret line="59" column="60" selection-start-line="59" selection-start-column="60" selection-end-line="59" selection-end-column="60" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/purchase_form2.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="16">
@@ -569,13 +505,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="128">
           <caret line="8" column="55" selection-start-line="8" selection-start-column="55" selection-end-line="8" selection-end-column="55" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/reservation_save.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="11" column="56" selection-start-line="11" selection-start-column="56" selection-end-line="11" selection-end-column="56" />
         </state>
       </provider>
     </entry>
@@ -628,20 +557,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/get_car_list.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="624">
-          <caret line="39" column="220" selection-start-line="39" selection-start-column="220" selection-end-line="39" selection-end-column="220" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/quene_list.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="640">
-          <caret line="40" column="56" selection-start-line="40" selection-start-column="56" selection-end-line="40" selection-end-column="56" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/customer_form.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="224">
@@ -684,13 +599,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/repair_show.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="336">
-          <caret line="30" column="94" lean-forward="true" selection-start-line="30" selection-start-column="94" selection-end-line="30" selection-end-column="94" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/repair_form.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="48">
@@ -712,13 +620,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/employee_save.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="512">
-          <caret line="63" column="33" selection-start-line="63" selection-start-column="33" selection-end-line="63" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/car_save.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="352">
@@ -733,17 +634,66 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/spareparts_save.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="284">
+          <caret line="18" column="40" lean-forward="true" selection-start-line="18" selection-start-column="40" selection-end-line="18" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/customer_save.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="286">
+        <state relative-caret-position="442">
           <caret line="26" column="4" selection-start-line="26" selection-start-column="4" selection-end-line="38" selection-end-column="5" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/spareparts_save.php">
+    <entry file="file://$PROJECT_DIR$/employee_save.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="30" column="57" selection-start-line="30" selection-start-column="57" selection-end-line="30" selection-end-column="57" />
+        <state relative-caret-position="658">
+          <caret line="63" column="33" selection-start-line="63" selection-start-column="33" selection-end-line="63" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/reservation_save.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/get_car_list.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="658">
+          <caret line="51" column="81" selection-start-line="51" selection-start-column="81" selection-end-line="51" selection-end-column="81" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/reservation_list.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="389">
+          <caret line="44" column="291" selection-start-line="44" selection-start-column="291" selection-end-line="44" selection-end-column="291" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/quene_list.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="538">
+          <caret line="37" column="32" selection-start-line="37" selection-start-column="32" selection-end-line="37" selection-end-column="88" />
+          <folding>
+            <element signature="n#style#0;n#td#1;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#1;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/repair_show.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="557">
+          <caret line="43" column="88" selection-start-line="43" selection-start-column="88" selection-end-line="43" selection-end-column="88" />
+          <folding>
+            <element signature="n#style#0;n#td#1;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
