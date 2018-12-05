@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50723
 File Encoding         : 65001
 
-Date: 2018-11-28 20:41:26
+Date: 2018-12-05 10:19:44
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -405,6 +405,7 @@ CREATE TABLE `reservation` (
   `rs_datereal` datetime NOT NULL,
   `rs_status` varchar(50) NOT NULL,
   `cus_id` varchar(50) NOT NULL,
+  `rs_ex` text,
   PRIMARY KEY (`rs_id`),
   KEY `cus_id` (`cus_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='D9 จองคิวเข้ารับบริการ';
@@ -412,18 +413,18 @@ CREATE TABLE `reservation` (
 -- ----------------------------
 -- Records of reservation
 -- ----------------------------
-INSERT INTO `reservation` VALUES ('21', 'ss', '2018-08-30 07:10:00', '2018-09-05 16:48:27', 'ซ่อมรถเสร็จแล้ว', 'CUS000001');
-INSERT INTO `reservation` VALUES ('27', 'หฟก', '2018-08-30 10:04:00', '2018-09-05 18:48:27', 'ซ่อมรถเสร็จแล้ว', 'CUS000002');
-INSERT INTO `reservation` VALUES ('28', 'asd', '2018-08-30 12:55:00', '2018-09-05 19:48:27', 'ซ่อมรถเสร็จแล้ว', 'CUS000003');
-INSERT INTO `reservation` VALUES ('29', 'หาตั้งนาน', '2018-08-30 04:04:00', '2018-09-05 19:48:27', 'นำรถเข้ารับบริการแล้ว', 'CUS000004');
-INSERT INTO `reservation` VALUES ('30', 'ลองใหม่', '2018-08-31 01:05:00', '2018-08-10 19:47:36', 'นำรถเข้ารับบริการแล้ว', 'CUS000005');
-INSERT INTO `reservation` VALUES ('31', '555+ss', '2018-08-31 02:22:00', '2018-08-01 19:47:20', 'นำรถเข้ารับบริการแล้ว', 'CUS000006');
-INSERT INTO `reservation` VALUES ('34', 'แอลจองนะ', '2018-10-24 04:44:00', '2018-10-01 19:47:08', 'ยืนยันการจองแล้ว', 'CUS000009');
-INSERT INTO `reservation` VALUES ('35', 'รุ่นรอง', '2018-11-26 09:04:00', '2018-11-01 23:31:44', 'ยืนยันการจองแล้ว', 'CUS000010');
-INSERT INTO `reservation` VALUES ('36', 'บิ๊กไบสีแดง', '2018-12-01 09:04:00', '2018-11-27 23:31:34', 'ยืนยันการจองแล้ว', 'CUS000011');
-INSERT INTO `reservation` VALUES ('37', 'X56', '2018-10-04 13:00:00', '2018-10-01 23:29:53', 'ยืนยันการจองแล้ว', 'CUS000012');
-INSERT INTO `reservation` VALUES ('38', 'รถเสีย ไฟหน้าแตก', '2018-11-20 12:00:00', '2018-11-05 23:29:45', 'ยังไม่ยืนยันการจอง', 'CUS000004');
-INSERT INTO `reservation` VALUES ('39', 'รถเสีย', '2018-11-29 09:04:00', '2018-11-26 16:04:13', 'ยังไม่ยืนยันการจอง', 'CUS000001');
+INSERT INTO `reservation` VALUES ('21', 'ss', '2018-08-30 07:10:00', '2018-09-05 16:48:27', 'ซ่อมรถเสร็จแล้ว', 'CUS000001', null);
+INSERT INTO `reservation` VALUES ('27', 'หฟก', '2018-08-30 10:04:00', '2018-09-05 18:48:27', 'ซ่อมรถเสร็จแล้ว', 'CUS000002', null);
+INSERT INTO `reservation` VALUES ('28', 'asd', '2018-08-30 12:55:00', '2018-09-05 19:48:27', 'ซ่อมรถเสร็จแล้ว', 'CUS000003', null);
+INSERT INTO `reservation` VALUES ('29', 'หาตั้งนาน', '2018-08-30 04:04:00', '2018-09-05 19:48:27', 'นำรถเข้ารับบริการแล้ว', 'CUS000004', null);
+INSERT INTO `reservation` VALUES ('30', 'ลองใหม่', '2018-08-31 01:05:00', '2018-08-10 19:47:36', 'นำรถเข้ารับบริการแล้ว', 'CUS000005', null);
+INSERT INTO `reservation` VALUES ('31', '555+ss', '2018-08-31 02:22:00', '2018-08-01 19:47:20', 'นำรถเข้ารับบริการแล้ว', 'CUS000006', null);
+INSERT INTO `reservation` VALUES ('34', 'แอลจองนะ', '2018-10-24 04:44:00', '2018-10-01 19:47:08', 'ยืนยันการจองแล้ว', 'CUS000009', null);
+INSERT INTO `reservation` VALUES ('35', 'รุ่นรอง', '2018-11-26 09:04:00', '2018-11-01 23:31:44', 'ยืนยันการจองแล้ว', 'CUS000010', null);
+INSERT INTO `reservation` VALUES ('36', 'บิ๊กไบสีแดง', '2018-12-01 09:04:00', '2018-11-27 23:31:34', 'ยืนยันการจองแล้ว', 'CUS000011', null);
+INSERT INTO `reservation` VALUES ('37', 'X56', '2018-10-04 13:00:00', '2018-10-01 23:29:53', 'ยืนยันการจองแล้ว', 'CUS000012', null);
+INSERT INTO `reservation` VALUES ('38', 'รถเสีย ไฟหน้าแตก', '2018-12-05 12:00:00', '2018-11-05 23:29:45', 'ยกเลิกการจองแล้ว', 'CUS000004', 'sdasd');
+INSERT INTO `reservation` VALUES ('39', 'รถเสีย', '2018-12-06 09:04:00', '2018-11-26 16:04:13', 'ยังไม่ยืนยันการจอง', 'CUS000001', null);
 
 -- ----------------------------
 -- Table structure for spareparts

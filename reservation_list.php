@@ -42,7 +42,7 @@
                                 <td><?= $array['rs_description'] ?></td>
                                 <td class="text-center">
                                     <a data-toggle="tooltip" href="reservation_save.php?mode=add&id=<?= $array['rs_id'] ?>" class="btn btn-default" data-original-title="Confirm"><i class="fa fa-check-circle" aria-hidden="true"></i> ยืนยัน</a>
-                                    <a data-toggle="tooltip" href="reservation_save.php?mode=delete&id=<?= $array['rs_id'] ?>" onclick="return confirm('คุณต้องการยกเลิกข้อมูลนี่ ? ')" class="btn btn-default" data-original-title="Trash"><i class="fa fa-trash-o" aria-hidden="true"></i> ยกเลิก</a>
+                                    <a data-toggle="tooltip" href="reservation_cancel.php?&id=<?= $array['rs_id'] ?>"  class="btn btn-default" data-original-title="Trash"><i class="fa fa-trash-o" aria-hidden="true"></i> ยกเลิก</a>
                                 </td>
                             </tr>
                             <?php

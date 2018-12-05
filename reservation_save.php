@@ -7,7 +7,7 @@ if ($_GET['mode'] == 'add') {
     echo "<script>alert('ยืนยันการจองแล้ว');</script>";
     echo "<META http-equiv='refresh' Content='0; URL=reservation_list.php'> ";
 } elseif ($_GET['mode'] == "delete") {
-    $sql = "update reservation set rs_status='ยกเลิกการจองแล้ว' where rs_id='" . $_GET['id'] . "'";
+    $sql = "update reservation set rs_status='ยกเลิกการจองแล้ว' ,rs_ex='" . $_POST['rs_ex'] . "' where rs_id='" . $_POST['rs_id']  . "'";
     $query = mysqli_query($connect, $sql);
     echo "<script>alert('ยกเลิกการจองเรียบร้อย');</script>";
     echo "<META http-equiv='refresh' Content='0; URL=reservation_list.php'> ";
