@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50723
 File Encoding         : 65001
 
-Date: 2018-12-05 10:19:44
+Date: 2018-12-08 15:38:36
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -302,6 +302,7 @@ INSERT INTO `purchase_order` VALUES ('POR000006', '2018-11-06', 'adas', 'asdasd'
 INSERT INTO `purchase_order` VALUES ('POR000007', '2018-11-06', 'asdasd', 'asdasdasd', 'asdasd', '120', 'EMP000002', '0');
 INSERT INTO `purchase_order` VALUES ('POR000008', '2018-11-07', 'ฟหกฟห', 'ฟหกฟหก', 'ฟหกฟหก', '500', 'EMP000001', '0');
 INSERT INTO `purchase_order` VALUES ('POR000009', '2018-11-17', 'gfhfgh', '121212', 'fghfgh', '1200', 'EMP000002', '0');
+INSERT INTO `purchase_order` VALUES ('POR000010', '2018-12-08', 'ฟหฟหกฟ', 'กฟหกก', '0844444444', '1400', 'EMP000002', '1');
 
 -- ----------------------------
 -- Table structure for purchase_order_list
@@ -339,6 +340,8 @@ INSERT INTO `purchase_order_list` VALUES ('REP000001', 'SPR000001', '2', '20');
 INSERT INTO `purchase_order_list` VALUES ('REP000001', 'SPR000002', '1', '100');
 INSERT INTO `purchase_order_list` VALUES ('POR000009', 'SPR000001', '10', '20');
 INSERT INTO `purchase_order_list` VALUES ('POR000009', 'SPR000006', '10', '100');
+INSERT INTO `purchase_order_list` VALUES ('POR000010', 'SPR000009', '5', '150');
+INSERT INTO `purchase_order_list` VALUES ('POR000010', 'SPR000008', '5', '130');
 
 -- ----------------------------
 -- Table structure for repair
@@ -449,7 +452,8 @@ INSERT INTO `spareparts` VALUES ('SPR000004', 'คาบู', 'คาบู ต�
 INSERT INTO `spareparts` VALUES ('SPR000005', 'ยางรถ ตรา BMW size L', 'ยางรถสำหรับรถ 110cc', '500', '10');
 INSERT INTO `spareparts` VALUES ('SPR000006', 'สายเบรค', '-', '100', '5');
 INSERT INTO `spareparts` VALUES ('SPR000007', 'ไฟหน้ารถ Mio รุ่นเก่า', '-', '200', '15');
-INSERT INTO `spareparts` VALUES ('SPR000008', 'สายคันเร่ง size M', '-', '130', '20');
+INSERT INTO `spareparts` VALUES ('SPR000008', 'สายคันเร่ง size M', '-', '130', '10');
+INSERT INTO `spareparts` VALUES ('SPR000009', 'หัวเทียน', '-', '150', '10');
 
 -- ----------------------------
 -- Table structure for store
