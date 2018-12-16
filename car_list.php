@@ -2,7 +2,7 @@
 <?php include "header.php"; ?>
 <div class="container-fluid">
     <div class="product-status-wrap">
-        <h4>ช้อมูลลูกค้า</h4>
+        <h4>ช้อมูลรถ</h4>
         <div class="row">
             <div class="col-md-4">
                 <div id="custom-search-input" >

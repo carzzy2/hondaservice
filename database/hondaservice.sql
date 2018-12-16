@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50723
 File Encoding         : 65001
 
-Date: 2018-12-08 15:38:36
+Date: 2018-12-16 12:01:04
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -181,8 +181,8 @@ CREATE TABLE `get_car` (
 -- Records of get_car
 -- ----------------------------
 INSERT INTO `get_car` VALUES ('GEC000001', '2018-11-10', 'asdasd', 'asdasd', 'CUS000001', '21', 'CAR000002', '2');
-INSERT INTO `get_car` VALUES ('GEC000002', '2018-11-11', 'FDGDFG', 'DFGDFG', 'CUS000002', '27', 'CAR000003', '1');
-INSERT INTO `get_car` VALUES ('GEC000003', '2018-11-11', 'fdrgdfg', 'dfgdfg', 'CUS000003', '28', 'CAR000004', '0');
+INSERT INTO `get_car` VALUES ('GEC000002', '2018-11-11', 'FDGDFG', 'DFGDFG', 'CUS000002', '27', 'CAR000003', '2');
+INSERT INTO `get_car` VALUES ('GEC000003', '2018-11-11', 'fdrgdfg', 'dfgdfg', 'CUS000003', '28', 'CAR000004', '1');
 INSERT INTO `get_car` VALUES ('GEC000004', '2018-11-11', 'dfgdfg', 'dfgdfg', 'CUS000004', '29', 'CAR000003', '0');
 
 -- ----------------------------
@@ -360,7 +360,8 @@ CREATE TABLE `repair` (
 -- ----------------------------
 -- Records of repair
 -- ----------------------------
-INSERT INTO `repair` VALUES ('REP000001', '2018-11-17', 'EMP000001', '520', 'GEC000001', '21');
+INSERT INTO `repair` VALUES ('REP000001', '2018-11-17', 'EMP000001', '600', 'GEC000001', '21');
+INSERT INTO `repair` VALUES ('REP000002', '2018-12-16', 'EMP000002', '2130', 'GEC000002', '27');
 
 -- ----------------------------
 -- Table structure for repair_checklist
@@ -377,6 +378,8 @@ CREATE TABLE `repair_checklist` (
 -- ----------------------------
 INSERT INTO `repair_checklist` VALUES ('REP000001', 'CHK000001', '30');
 INSERT INTO `repair_checklist` VALUES ('REP000001', 'CHK000002', '50');
+INSERT INTO `repair_checklist` VALUES ('REP000002', 'CHK000001', '30');
+INSERT INTO `repair_checklist` VALUES ('REP000002', 'CHK000004', '100');
 
 -- ----------------------------
 -- Table structure for repair_spareparts
@@ -396,6 +399,8 @@ INSERT INTO `repair_spareparts` VALUES ('REP000001', 'SPR000002', '1', '100');
 INSERT INTO `repair_spareparts` VALUES ('REP000001', 'SPR000003', '1', '200');
 INSERT INTO `repair_spareparts` VALUES ('REP000001', 'SPR000001', '1', '20');
 INSERT INTO `repair_spareparts` VALUES ('REP000001', 'SPR000003', '1', '200');
+INSERT INTO `repair_spareparts` VALUES ('REP000002', 'SPR000004', '1', '1500');
+INSERT INTO `repair_spareparts` VALUES ('REP000002', 'SPR000005', '1', '500');
 
 -- ----------------------------
 -- Table structure for reservation
@@ -448,8 +453,8 @@ CREATE TABLE `spareparts` (
 INSERT INTO `spareparts` VALUES ('SPR000001', 'ฟันเฟือง', 'เป็นชิ้นส่วนเครื่องจักร', '20', '2');
 INSERT INTO `spareparts` VALUES ('SPR000002', 'น้ำมันเครื่อง', 'ใช้เมื่อหมดจะสต้าทรถไม่ติด', '100', '14');
 INSERT INTO `spareparts` VALUES ('SPR000003', 'ไฟเลี้ยว', 'ใช้เป็นสัญญาณจราจร', '200', '5');
-INSERT INTO `spareparts` VALUES ('SPR000004', 'คาบู', 'คาบู ตราหมาทีบลูกบอล ใช้วัสดุระดับ Hight-end ช่วยให้เร่งความเร็วได้สูงงงงง', '1500', '6');
-INSERT INTO `spareparts` VALUES ('SPR000005', 'ยางรถ ตรา BMW size L', 'ยางรถสำหรับรถ 110cc', '500', '10');
+INSERT INTO `spareparts` VALUES ('SPR000004', 'คาบู', 'คาบู ตราหมาทีบลูกบอล ใช้วัสดุระดับ Hight-end ช่วยให้เร่งความเร็วได้สูงงงงง', '1500', '5');
+INSERT INTO `spareparts` VALUES ('SPR000005', 'ยางรถ ตรา BMW size L', 'ยางรถสำหรับรถ 110cc', '500', '9');
 INSERT INTO `spareparts` VALUES ('SPR000006', 'สายเบรค', '-', '100', '5');
 INSERT INTO `spareparts` VALUES ('SPR000007', 'ไฟหน้ารถ Mio รุ่นเก่า', '-', '200', '15');
 INSERT INTO `spareparts` VALUES ('SPR000008', 'สายคันเร่ง size M', '-', '130', '10');
