@@ -15,8 +15,6 @@ if($_SESSION['ss_login'] != session_id() or $_SESSION['ss_emp_id']==NULL ){
     <title>HONDA Service</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- favicon
-		============================================ -->
     <link rel="shortcut icon" type="image/x-icon" href="img/Honda-Motorcycle-Logo.png">
     <link href="https://fonts.googleapis.com/css?family=Play:400,700" rel="stylesheet">
     <link rel="stylesheet" href="css/bootstrap.min.css">
@@ -129,6 +127,8 @@ if ($login['emp_position'] == "0") {
                     <li><a href="get_car_list.php" aria-expanded="false"><i class="fa big-icon fa-table icon-wrap" aria-hidden="true"></i><span class="mini-click-non">นำรถเข้ารับบริการ</span></a></li>
                     <li><a href="quene_list.php" aria-expanded="false"><i class="fa big-icon fa-table icon-wrap" aria-hidden="true"></i><span class="mini-click-non">จัดคิวเข้ารับบริการ</span></a></li>
                     <li><a href="repair_show.php" aria-expanded="false"><i class="fa big-icon fa-table icon-wrap" aria-hidden="true"></i><span class="mini-click-non">บันทึกการซ่อม</span></a></li>
+                    <li><a href="pay_show.php" aria-expanded="false"><i class="fa big-icon fa-table icon-wrap" aria-hidden="true"></i><span class="mini-click-non">ชำระค่าซ่อมรถ</span></a></li>
+                    <li><a href="backcar_show.php" aria-expanded="false"><i class="fa big-icon fa-table icon-wrap" aria-hidden="true"></i><span class="mini-click-non">รับรถ</span></a></li>
                 </ul>
             </nav>
         </div>

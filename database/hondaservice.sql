@@ -10,10 +10,29 @@ Target Server Type    : MYSQL
 Target Server Version : 50723
 File Encoding         : 65001
 
-Date: 2018-12-16 12:01:04
+Date: 2019-01-14 21:41:19
 */
 
 SET FOREIGN_KEY_CHECKS=0;
+
+-- ----------------------------
+-- Table structure for backcar
+-- ----------------------------
+DROP TABLE IF EXISTS `backcar`;
+CREATE TABLE `backcar` (
+  `bc_id` varchar(30) NOT NULL,
+  `bc_date` date DEFAULT NULL,
+  `emp_id` varchar(30) DEFAULT NULL,
+  `gc_id` varchar(30) DEFAULT NULL,
+  `rs_id` varchar(30) DEFAULT NULL,
+  `re_id` varchar(30) DEFAULT NULL,
+  PRIMARY KEY (`bc_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='D12 ข้อมูลการซ่อม';
+
+-- ----------------------------
+-- Records of backcar
+-- ----------------------------
+INSERT INTO `backcar` VALUES ('BAC000001', '2019-01-14', 'EMP000002', 'GEC000001', '21', 'REP000001');
 
 -- ----------------------------
 -- Table structure for buyorder
@@ -180,10 +199,12 @@ CREATE TABLE `get_car` (
 -- ----------------------------
 -- Records of get_car
 -- ----------------------------
-INSERT INTO `get_car` VALUES ('GEC000001', '2018-11-10', 'asdasd', 'asdasd', 'CUS000001', '21', 'CAR000002', '2');
-INSERT INTO `get_car` VALUES ('GEC000002', '2018-11-11', 'FDGDFG', 'DFGDFG', 'CUS000002', '27', 'CAR000003', '2');
-INSERT INTO `get_car` VALUES ('GEC000003', '2018-11-11', 'fdrgdfg', 'dfgdfg', 'CUS000003', '28', 'CAR000004', '1');
-INSERT INTO `get_car` VALUES ('GEC000004', '2018-11-11', 'dfgdfg', 'dfgdfg', 'CUS000004', '29', 'CAR000003', '0');
+INSERT INTO `get_car` VALUES ('GEC000001', '2018-11-10', 'asdasd', 'asdasd', 'CUS000001', '21', 'CAR000002', '4');
+INSERT INTO `get_car` VALUES ('GEC000002', '2018-11-11', 'FDGDFG', 'DFGDFG', 'CUS000002', '27', 'CAR000003', '3');
+INSERT INTO `get_car` VALUES ('GEC000003', '2018-11-11', 'fdrgdfg', 'dfgdfg', 'CUS000003', '28', 'CAR000004', '3');
+INSERT INTO `get_car` VALUES ('GEC000004', '2018-11-11', 'dfgdfg', 'dfgdfg', 'CUS000004', '29', 'CAR000003', '2');
+INSERT INTO `get_car` VALUES ('GEC000005', '2019-01-14', '5111-22', 'กหฟดฟหด', 'CUS000009', '34', 'CAR000001', '1');
+INSERT INTO `get_car` VALUES ('GEC000006', '2019-01-14', '11122', 'dasd', 'CUS000010', '35', 'CAR000001', '0');
 
 -- ----------------------------
 -- Table structure for listorder
@@ -257,6 +278,28 @@ INSERT INTO `ordersp` VALUES ('4', 'Loko', '123456', 'admin', '2018-10-04 07:07:
 -- ----------------------------
 DROP TABLE IF EXISTS `payment`;
 CREATE TABLE `payment` (
+  `pa_id` varchar(30) NOT NULL,
+  `pa_date` date DEFAULT NULL,
+  `emp_id` varchar(30) DEFAULT NULL,
+  `pa_total` int(200) DEFAULT NULL,
+  `gc_id` varchar(30) DEFAULT NULL,
+  `rs_id` varchar(30) DEFAULT NULL,
+  `re_id` varchar(30) DEFAULT NULL,
+  PRIMARY KEY (`pa_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='D12 ข้อมูลการซ่อม';
+
+-- ----------------------------
+-- Records of payment
+-- ----------------------------
+INSERT INTO `payment` VALUES ('PAY000001', '2019-01-13', 'EMP000002', '600', 'GEC000001', '21', 'REP000001');
+INSERT INTO `payment` VALUES ('PAY000002', '2019-01-14', 'EMP000002', '2130', 'GEC000002', '27', 'REP000002');
+INSERT INTO `payment` VALUES ('PAY000003', '2019-01-14', 'EMP000002', '550', 'GEC000003', '28', 'REP000003');
+
+-- ----------------------------
+-- Table structure for payment_copy
+-- ----------------------------
+DROP TABLE IF EXISTS `payment_copy`;
+CREATE TABLE `payment_copy` (
   `pay_id` varchar(30) NOT NULL,
   `pay_price` varchar(30) NOT NULL,
   `re_id` varchar(30) NOT NULL,
@@ -269,10 +312,10 @@ CREATE TABLE `payment` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
--- Records of payment
+-- Records of payment_copy
 -- ----------------------------
-INSERT INTO `payment` VALUES ('001', '2000', 're01', '001', 'cs01');
-INSERT INTO `payment` VALUES ('002', '520', 're02', '002', 'cs03');
+INSERT INTO `payment_copy` VALUES ('001', '2000', 're01', '001', 'cs01');
+INSERT INTO `payment_copy` VALUES ('002', '520', 're02', '002', 'cs03');
 
 -- ----------------------------
 -- Table structure for purchase_order
@@ -362,6 +405,8 @@ CREATE TABLE `repair` (
 -- ----------------------------
 INSERT INTO `repair` VALUES ('REP000001', '2018-11-17', 'EMP000001', '600', 'GEC000001', '21');
 INSERT INTO `repair` VALUES ('REP000002', '2018-12-16', 'EMP000002', '2130', 'GEC000002', '27');
+INSERT INTO `repair` VALUES ('REP000003', '2019-01-14', 'EMP000002', '550', 'GEC000003', '28');
+INSERT INTO `repair` VALUES ('REP000004', '2019-01-14', 'EMP000002', '1100', 'GEC000004', '29');
 
 -- ----------------------------
 -- Table structure for repair_checklist
@@ -380,6 +425,8 @@ INSERT INTO `repair_checklist` VALUES ('REP000001', 'CHK000001', '30');
 INSERT INTO `repair_checklist` VALUES ('REP000001', 'CHK000002', '50');
 INSERT INTO `repair_checklist` VALUES ('REP000002', 'CHK000001', '30');
 INSERT INTO `repair_checklist` VALUES ('REP000002', 'CHK000004', '100');
+INSERT INTO `repair_checklist` VALUES ('REP000003', 'CHK000003', '30');
+INSERT INTO `repair_checklist` VALUES ('REP000003', 'CHK000004', '100');
 
 -- ----------------------------
 -- Table structure for repair_spareparts
@@ -401,6 +448,11 @@ INSERT INTO `repair_spareparts` VALUES ('REP000001', 'SPR000001', '1', '20');
 INSERT INTO `repair_spareparts` VALUES ('REP000001', 'SPR000003', '1', '200');
 INSERT INTO `repair_spareparts` VALUES ('REP000002', 'SPR000004', '1', '1500');
 INSERT INTO `repair_spareparts` VALUES ('REP000002', 'SPR000005', '1', '500');
+INSERT INTO `repair_spareparts` VALUES ('REP000003', 'SPR000007', '1', '200');
+INSERT INTO `repair_spareparts` VALUES ('REP000003', 'SPR000003', '1', '200');
+INSERT INTO `repair_spareparts` VALUES ('REP000003', 'SPR000001', '1', '20');
+INSERT INTO `repair_spareparts` VALUES ('REP000004', 'SPR000002', '1', '100');
+INSERT INTO `repair_spareparts` VALUES ('REP000004', 'SPR000005', '1', '500');
 
 -- ----------------------------
 -- Table structure for reservation
@@ -421,14 +473,14 @@ CREATE TABLE `reservation` (
 -- ----------------------------
 -- Records of reservation
 -- ----------------------------
-INSERT INTO `reservation` VALUES ('21', 'ss', '2018-08-30 07:10:00', '2018-09-05 16:48:27', 'ซ่อมรถเสร็จแล้ว', 'CUS000001', null);
-INSERT INTO `reservation` VALUES ('27', 'หฟก', '2018-08-30 10:04:00', '2018-09-05 18:48:27', 'ซ่อมรถเสร็จแล้ว', 'CUS000002', null);
-INSERT INTO `reservation` VALUES ('28', 'asd', '2018-08-30 12:55:00', '2018-09-05 19:48:27', 'ซ่อมรถเสร็จแล้ว', 'CUS000003', null);
-INSERT INTO `reservation` VALUES ('29', 'หาตั้งนาน', '2018-08-30 04:04:00', '2018-09-05 19:48:27', 'นำรถเข้ารับบริการแล้ว', 'CUS000004', null);
+INSERT INTO `reservation` VALUES ('21', 'ss', '2018-08-30 07:10:00', '2018-09-05 16:48:27', 'รับรถแล้ว', 'CUS000001', null);
+INSERT INTO `reservation` VALUES ('27', 'หฟก', '2018-08-30 10:04:00', '2018-09-05 18:48:27', 'ชำระเงินแล้ว', 'CUS000002', null);
+INSERT INTO `reservation` VALUES ('28', 'asd', '2018-08-30 12:55:00', '2018-09-05 19:48:27', 'ชำระเงินแล้ว', 'CUS000003', null);
+INSERT INTO `reservation` VALUES ('29', 'หาตั้งนาน', '2018-08-30 04:04:00', '2018-09-05 19:48:27', 'ซ่อมรถเสร็จแล้ว', 'CUS000004', null);
 INSERT INTO `reservation` VALUES ('30', 'ลองใหม่', '2018-08-31 01:05:00', '2018-08-10 19:47:36', 'นำรถเข้ารับบริการแล้ว', 'CUS000005', null);
 INSERT INTO `reservation` VALUES ('31', '555+ss', '2018-08-31 02:22:00', '2018-08-01 19:47:20', 'นำรถเข้ารับบริการแล้ว', 'CUS000006', null);
-INSERT INTO `reservation` VALUES ('34', 'แอลจองนะ', '2018-10-24 04:44:00', '2018-10-01 19:47:08', 'ยืนยันการจองแล้ว', 'CUS000009', null);
-INSERT INTO `reservation` VALUES ('35', 'รุ่นรอง', '2018-11-26 09:04:00', '2018-11-01 23:31:44', 'ยืนยันการจองแล้ว', 'CUS000010', null);
+INSERT INTO `reservation` VALUES ('34', 'แอลจองนะ', '2018-10-24 04:44:00', '2018-10-01 19:47:08', 'นำรถเข้ารับบริการแล้ว', 'CUS000009', null);
+INSERT INTO `reservation` VALUES ('35', 'รุ่นรอง', '2018-11-26 09:04:00', '2018-11-01 23:31:44', 'นำรถเข้ารับบริการแล้ว', 'CUS000010', null);
 INSERT INTO `reservation` VALUES ('36', 'บิ๊กไบสีแดง', '2018-12-01 09:04:00', '2018-11-27 23:31:34', 'ยืนยันการจองแล้ว', 'CUS000011', null);
 INSERT INTO `reservation` VALUES ('37', 'X56', '2018-10-04 13:00:00', '2018-10-01 23:29:53', 'ยืนยันการจองแล้ว', 'CUS000012', null);
 INSERT INTO `reservation` VALUES ('38', 'รถเสีย ไฟหน้าแตก', '2018-12-05 12:00:00', '2018-11-05 23:29:45', 'ยกเลิกการจองแล้ว', 'CUS000004', 'sdasd');
@@ -450,13 +502,13 @@ CREATE TABLE `spareparts` (
 -- ----------------------------
 -- Records of spareparts
 -- ----------------------------
-INSERT INTO `spareparts` VALUES ('SPR000001', 'ฟันเฟือง', 'เป็นชิ้นส่วนเครื่องจักร', '20', '2');
-INSERT INTO `spareparts` VALUES ('SPR000002', 'น้ำมันเครื่อง', 'ใช้เมื่อหมดจะสต้าทรถไม่ติด', '100', '14');
-INSERT INTO `spareparts` VALUES ('SPR000003', 'ไฟเลี้ยว', 'ใช้เป็นสัญญาณจราจร', '200', '5');
+INSERT INTO `spareparts` VALUES ('SPR000001', 'ฟันเฟือง', 'เป็นชิ้นส่วนเครื่องจักร', '20', '1');
+INSERT INTO `spareparts` VALUES ('SPR000002', 'น้ำมันเครื่อง', 'ใช้เมื่อหมดจะสต้าทรถไม่ติด', '100', '13');
+INSERT INTO `spareparts` VALUES ('SPR000003', 'ไฟเลี้ยว', 'ใช้เป็นสัญญาณจราจร', '200', '4');
 INSERT INTO `spareparts` VALUES ('SPR000004', 'คาบู', 'คาบู ตราหมาทีบลูกบอล ใช้วัสดุระดับ Hight-end ช่วยให้เร่งความเร็วได้สูงงงงง', '1500', '5');
-INSERT INTO `spareparts` VALUES ('SPR000005', 'ยางรถ ตรา BMW size L', 'ยางรถสำหรับรถ 110cc', '500', '9');
+INSERT INTO `spareparts` VALUES ('SPR000005', 'ยางรถ ตรา BMW size L', 'ยางรถสำหรับรถ 110cc', '500', '8');
 INSERT INTO `spareparts` VALUES ('SPR000006', 'สายเบรค', '-', '100', '5');
-INSERT INTO `spareparts` VALUES ('SPR000007', 'ไฟหน้ารถ Mio รุ่นเก่า', '-', '200', '15');
+INSERT INTO `spareparts` VALUES ('SPR000007', 'ไฟหน้ารถ Mio รุ่นเก่า', '-', '200', '14');
 INSERT INTO `spareparts` VALUES ('SPR000008', 'สายคันเร่ง size M', '-', '130', '10');
 INSERT INTO `spareparts` VALUES ('SPR000009', 'หัวเทียน', '-', '150', '10');
 

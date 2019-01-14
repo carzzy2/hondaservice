@@ -8,10 +8,10 @@ unset($_SESSION['ss_ch_id']);
 ?>
 <div class="container-fluid">
     <div class="product-status-wrap">
-        <h4>รายการซ่อม</h4>
+        <h4>ชำระค่าซ่อมรถ</h4>
         <div class="col-md-12">
             <div class="pull-right">
-                <a data-toggle="tooltip" href="repair_previous.php" class="btn btn-info" data-original-title="ดูรายการซ่อมย้อนหลัง">ดูรายการซ่อมย้อนหลัง</a>
+                <a data-toggle="tooltip" href="pay_previous.php" class="btn btn-info" data-original-title="ดูรายการชำระย้อนหลัง">ดูรายการชำระย้อนหลัง</a>
             </div>
         </div>
         <div class="row">
@@ -21,34 +21,36 @@ unset($_SESSION['ss_ch_id']);
                     <tr>
                         <th class="text-center">#</th>
                         <th class="text-center">รหัส</th>
+                        <th class="text-center">วันที่ซ่อม</th>
                         <th class="text-center">ชื่อลูกค้า</th>
-                        <th class="text-center">วันทีนำรถเข้ารับบริการ</th>
-                        <th class="text-center">ทะเบียนรถ</th>
-                        <th class="text-center">อาการ</th>
+                        <th class="text-center">ยอดรวม</th>
                         <th class="text-center">จัดการข้อมูล</th>
                     </tr>
                     </thead>
                     <tbody>
                     <?php
                     $n = 0;
-                    $sql = "select * from get_car where gc_status='1' order by gc_id asc";
+                    $sql = "select * from `repair`  re INNER JOIN get_car gc on re.gc_id = gc.gc_id where gc_status = '2' order by re_id asc";
                     $query = mysqli_query($connect, $sql);
                     if (mysqli_num_rows($query) > 0 ) {
                         while ($array = mysqli_fetch_array($query)) {
                             $n++;
-                            $sql2 = "select * from customer where cus_id='".$array['cus_id']."'";
+                            $sql2 = "select * from get_car where gc_id='".$array['gc_id']."'";
                             $query2 = mysqli_query($connect, $sql2);
                             $array2 = mysqli_fetch_array($query2);
+
+                            $sql3 = "select * from customer where cus_id='".$array2['cus_id']."'";
+                            $query3 = mysqli_query($connect, $sql3);
+                            $array3 = mysqli_fetch_array($query3);
                             ?>
                             <tr>
                                 <td class="text-center" scope="row"><?= $n; ?></td>
-                                <td style="max-width: 200px"><?= $array['gc_id'] ?></td>
-                                <td style="max-width: 200px">คุณ<?= $array2['cus_name'] ?></td>
-                                <td style="max-width: 200px" class="text-center"><?= FormatDay($array['gc_date']) ?></td>
-                                <td><?= $array['gc_doc'] ?></td>
-                                <td><?= $array['gc_text'] ?></td>
+                                <td style="max-width: 200px"><?= $array['re_id'] ?></td>
+                                <td style="max-width: 200px" class="text-center"><?= FormatDay($array['re_date']) ?></td>
+                                <td style="max-width: 200px">คุณ<?= $array3['cus_name'] ?></td>
+                                <td class="text-right"><?= number_format($array['re_total']) ?> บาท</td>
                                 <td class="text-center">
-                                    <a data-toggle="tooltip"  href="repair_form.php?id=<?= $array['gc_id'] ?>" class="btn btn-default" data-original-title="Confirm"><i class="fa fa-check-circle" aria-hidden="true"> บันทึก</i></a>
+                                    <a data-toggle="tooltip"  href="pay_form.php?id=<?= $array['re_id'] ?>" class="btn btn-default" data-original-title="ดูรายละเอียด">ชำระค่าซ่อม</a>
                                 </td>
                             </tr>
                             <?php
@@ -56,7 +58,7 @@ unset($_SESSION['ss_ch_id']);
                     } else {
                         ?>
                         <tr>
-                            <th style="text-align: center;color: red;" colspan="7"> ไม่พบข้อมูล</th>
+                            <th style="text-align: center;color: red;" colspan="6"> ไม่พบข้อมูล</th>
                         </tr>
                         <?php
                     }
@@ -67,5 +69,5 @@ unset($_SESSION['ss_ch_id']);
         </div>
     </div>
 </div>
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 <?php include "footer.php"; ?>
