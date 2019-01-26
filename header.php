@@ -26,17 +26,25 @@
                                 <div class="col-lg-6 col-md-7 col-sm-6 col-xs-12">
                                     <div class="header-top-menu tabl-d-n">
                                         <ul class="nav navbar-nav mai-top-nav">
-<!--                                            <li class="nav-item"><a href="#" class="nav-link">Home</a>-->
-<!--                                            </li>-->
-<!--                                            <li class="nav-item"><a href="#" class="nav-link">About</a>-->
-<!--                                            </li>-->
-<!--                                            <li class="nav-item"><a href="#" class="nav-link">Services</a>-->
-<!--                                            </li>-->
-<!--                                            <li class="nav-item"><a href="#" class="nav-link">Support</a>-->
-<!--                                            </li>-->
+                                            <?php if ($login['emp_position'] == "0") { ?>
+                                            <li class="nav-item">
+                                                <a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle">
+                                                    รายงาน
+                                                    <i class="fa fa-angle-down adminpro-icon adminpro-down-arrow"></i>
+                                                </a>
+                                                <ul role="menu" class="dropdown-header-top author-log dropdown-menu animated zoomIn">
+                                                    <li><a href="report_purchase.php">รายงานสั่งซื้ออะไหล่</a></li>
+                                                    <li><a href="report_reservation.php">รายงานการจอง</a></li>
+                                                    <li><a href="report_repair.php">รายงานการซ่อม</a></li>
+                                                    <li><a href="report_pay.php">รายงานการชำระเงิน</a></li>
+                                                    <li><a href="report_backcar.php">รายงานการรับรถ</a></li>
+                                                </ul>
+                                            </li>
+                                            <?php } ?>
                                         </ul>
                                     </div>
                                 </div>
+
                                 <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12">
                                     <div class="header-right-info">
                                         <ul class="nav navbar-nav mai-top-nav header-right-menu">

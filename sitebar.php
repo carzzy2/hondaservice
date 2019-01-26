@@ -37,6 +37,7 @@ if($_SESSION['ss_login'] != session_id() or $_SESSION['ss_emp_id']==NULL ){
     <link rel="stylesheet" href="css/buttons.css">
     <script src="js/vendor/modernizr-2.8.3.min.js"></script>
     <script src="js/vendor/jquery-1.11.3.min.js"></script>
+    <script src="dist/excellentexport.js"></script>
 </head>
 <body>
 <style>
