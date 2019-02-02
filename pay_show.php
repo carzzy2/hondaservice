@@ -23,7 +23,7 @@ unset($_SESSION['ss_ch_id']);
                         <th class="text-center">รหัส</th>
                         <th class="text-center">วันที่ซ่อม</th>
                         <th class="text-center">ชื่อลูกค้า</th>
-                        <th class="text-center">ยอดรวม</th>
+                        <th class="text-center">ยอดรวม(บาท)</th>
                         <th class="text-center">จัดการข้อมูล</th>
                     </tr>
                     </thead>
@@ -48,7 +48,7 @@ unset($_SESSION['ss_ch_id']);
                                 <td style="max-width: 200px"><?= $array['re_id'] ?></td>
                                 <td style="max-width: 200px" class="text-center"><?= FormatDay($array['re_date']) ?></td>
                                 <td style="max-width: 200px">คุณ<?= $array3['cus_name'] ?></td>
-                                <td class="text-right"><?= number_format($array['re_total']) ?> บาท</td>
+                                <td class="text-right"><?= number_format($array['re_total']) ?></td>
                                 <td class="text-center">
                                     <a data-toggle="tooltip"  href="pay_form.php?id=<?= $array['re_id'] ?>" class="btn btn-default" data-original-title="ดูรายละเอียด">ชำระค่าซ่อม</a>
                                 </td>

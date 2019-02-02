@@ -57,9 +57,9 @@ $cus = mysqli_fetch_array($query2);
                                             <th class="text-center" >#</th>
                                             <th class="text-center" >รหัส</th>
                                             <th class="text-center" >รายการ</th>
-                                            <th class="text-center">ราคา</th>
+                                            <th class="text-center">ราคา(บาท)</th>
                                             <th class="text-center" width="200px">จำนวน</th>
-                                            <th class="text-center">ราคารวม</th>
+                                            <th class="text-center">ราคารวม(บาท)</th>
                                         </tr>
                                         </thead>
                                         <tbody>
@@ -78,9 +78,9 @@ $cus = mysqli_fetch_array($query2);
                                                     <td class="text-center"><?= $n; ?></td>
                                                     <td><?= $arraych['ch_id'] ?></td>
                                                     <td><?= $arraych['ch_list'] ?></td>
-                                                    <td class="text-right"><?= number_format($array_list2['re_price']) ?> บาท</td>
+                                                    <td class="text-right"><?= number_format($array_list2['re_price']) ?></td>
                                                     <td class="text-right">-</td>
-                                                    <td class="text-right"><?= number_format($array_list2['re_price'] ) ?> บาท</td>
+                                                    <td class="text-right"><?= number_format($array_list2['re_price'] ) ?></td>
                                                 </tr>
                                                 <?php
                                             $alltotal+= $array_list2['re_price'];
@@ -99,9 +99,9 @@ $cus = mysqli_fetch_array($query2);
                                                     <td class="text-center"><?= $n; ?></td>
                                                     <td><?= $arraysp['sp_id'] ?></td>
                                                     <td><?= $arraysp['sp_name'] ?></td>
-                                                    <td class="text-right"><?= number_format($array_list['re_price']) ?> บาท</td>
+                                                    <td class="text-right"><?= number_format($array_list['re_price']) ?></td>
                                                     <td class="text-right"><?= $array_list['re_num']?> ชิ้น</td>
-                                                    <td class="text-right"><?= number_format($array_list['re_price']*$array_list['re_num'] ) ?> บาท</td>
+                                                    <td class="text-right"><?= number_format($array_list['re_price']*$array_list['re_num'] ) ?></td>
                                                 </tr>
                                                 <?php
                                                 $alltotal+= $array_list['re_price']*$array_list['re_num'];

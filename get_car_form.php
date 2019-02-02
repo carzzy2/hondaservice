@@ -66,16 +66,6 @@ $array3 = mysqli_fetch_array($query3);
                                         <div class="form-group-inner">
                                             <div class="row">
                                                 <div class="col-md-2">
-                                                    <label class="login2 pull-right pull-right-pro">ทะเบียนรถ<span style="color: red;">*</span></label>
-                                                </div>
-                                                <div class="col-md-6">
-                                                    <input type="text" name="gc_doc" class="form-control" required>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="form-group-inner">
-                                            <div class="row">
-                                                <div class="col-md-2">
                                                     <label class="login2 pull-right pull-right-pro">อาการรถ<span style="color: red;">*</span></label>
                                                 </div>
                                                 <div class="col-md-6">

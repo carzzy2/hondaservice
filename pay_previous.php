@@ -23,7 +23,7 @@ unset($_SESSION['ss_ch_id']);
                         <th class="text-center">รหัสใบเสร็จ</th>
                         <th class="text-center">วันที่ชำระ</th>
                         <th class="text-center">ชื่อลูกค้า</th>
-                        <th class="text-center">ยอดรวม</th>
+                        <th class="text-center">ยอดรวม(บาท)</th>
                         <th class="text-center">จัดการข้อมูล</th>
                     </tr>
                     </thead>
@@ -49,7 +49,7 @@ unset($_SESSION['ss_ch_id']);
                                 <td style="max-width: 200px"><?= $array['re_id'] ?></td>
                                 <td style="max-width: 200px" class="text-center"><?= FormatDay($array['pa_date']) ?></td>
                                 <td style="max-width: 200px">คุณ<?= $array3['cus_name'] ?></td>
-                                <td class="text-right"><?= number_format($array['pa_total']) ?> บาท</td>
+                                <td class="text-right"><?= number_format($array['pa_total']) ?></td>
                                 <td class="text-center">
                                     <a data-toggle="tooltip"  href="pay_view.php?id=<?= $array['pa_id'] ?>" class="btn btn-default" data-original-title="ดูรายละเอียด"><i class="fa  fa-search-plus" aria-hidden="true"></i> ดูรายละเอียด</a>
                                     <a data-toggle="tooltip"  href="pay_print.php?id=<?= $array['pa_id'] ?>&option=p" class="btn btn-warning" target="_blank" data-original-title="ดูรายละเอียด"><i class="fa  fa-print" aria-hidden="true"></i> ปริ้น</a>

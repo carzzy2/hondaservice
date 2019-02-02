@@ -39,15 +39,24 @@ include "header.php";
                             $sqlcar = "select * from carorder where co_id= '".$array2['co_id']."' ";
                             $querycar = mysqli_query($connect, $sqlcar);
                             $arraycar = mysqli_fetch_array($querycar);
+
+                            $sqlpay = "select * from payment where re_id= '".$array['re_id']."' ";
+                            $querypay = mysqli_query($connect, $sqlpay);
+                            $arraypay = mysqli_fetch_array($querypay);
+
+                            $sqlres = "select * from reservation where rs_id='".$array['rs_id']."'";
+                            $queryres = mysqli_query($connect, $sqlres);
+                            $arrayres = mysqli_fetch_array($queryres);
                             ?>
                             <tr>
                                 <td class="text-center" scope="row"><?= $n; ?></td>
                                 <td style="max-width: 200px"><?= $array['re_id'] ?></td>
                                 <td style="max-width: 200px" class="text-center"><?= FormatDay($array['re_date']) ?></td>
-                                <td style="max-width: 200px" class="text-center"><?= FormatDay($array['pa_date']) ?></td>
+                                <td style="max-width: 200px" class="text-center"><?= FormatDay($arraypay['pa_date']) ?></td>
                                 <td style="max-width: 200px">คุณ<?= $array3['cus_name'] ?></td>
-                                <td class="text-right"><?= $array['gc_doc'] ?></td>
-                                <td class="text-right"><?= $arraycar['co_carmodel'] ?></td>
+                                <td ><?= $arraycar['co_carmodel'] ?></td>
+                                <td><?= $arrayres['rs_doc'] ?></td>
+
                                 <td class="text-center">
                                     <a data-toggle="tooltip"  href="backcar_save.php?id=<?= $array['re_id'] ?>" onclick="return confirm('ยืนยันการรับรถ ? ')" class="btn btn-default" data-original-title="รับรถ">รับรถ</a>
                                 </td>

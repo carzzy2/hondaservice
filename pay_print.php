@@ -23,6 +23,10 @@ $arraycar = mysqli_fetch_array($querycar);
 $sql_login = "select * from employee where emp_id='".$array['emp_id']."'";
 $result_login = mysqli_query($connect, $sql_login);
 $login = mysqli_fetch_array($result_login);
+
+$sqlres = "select * from reservation where rs_id='".$array['rs_id']."'";
+$queryres = mysqli_query($connect, $sqlres);
+$arrayres = mysqli_fetch_array($queryres);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -54,6 +58,7 @@ $login = mysqli_fetch_array($result_login);
     <link rel="stylesheet" href="css/buttons.css">
     <script src="js/vendor/modernizr-2.8.3.min.js"></script>
     <script src="js/vendor/jquery-1.11.3.min.js"></script>
+
 </head>
 <body  <?php if($_GET['option']=="p"){ echo "onload='window.print();' ";} ?> >
     <!--onload="window.print();"-->
@@ -77,16 +82,35 @@ $login = mysqli_fetch_array($result_login);
         <center><h3>ใบเสร็จรับเงิน</h3></center>
 <br>
         <div class="col-md-12">
-            <b>รหัสใบเสร็จ: </b><?=$array['pa_id']?>
+            <table  style="width: 100%;max-width: 100%;margin-bottom: 20px;" border="0" cellpadding="0" cellspacing="0" align="center" style="border-top: 0px">
+                <tr >
+                    <td style="width: 50%"><b>รหัสใบเสร็จ: </b><?=$array['pa_id']?></td>
+                    <td style="width: 50%">
+                        <b>วันที่ชำระ: </b><?=$array['pa_date']?>
+                    </td>
+                </tr>
+            </table>
         </div>
         <div class="col-md-12" >
-            <b>วันที่ชำระ: </b><?=$array['pa_date']?>
+            <table  style="width: 100%;max-width: 100%;margin-bottom: 20px;" border="0" cellpadding="0" cellspacing="0" align="center" style="border-top: 0px">
+                <tr >
+                    <td style="width: 50%"> <b>ลูกค้า: </b><?=$arraycus['cus_name']?></td>
+                    <td style="width: 50%">
+                        <b>ที่อยู่: </b><?=$arraycus['cus_add']?>
+                    </td>
+                </tr>
+            </table>
         </div>
         <div class="col-md-12">
-            <b>ลูกค้า: </b><?=$arraycus['cus_name']?>
-        </div>
-        <div class="col-md-12">
-            <b>รุ่นรถ: </b><?=$arraycar['co_carmodel']?>
+            <table  style="width: 100%;max-width: 100%;margin-bottom: 20px;" border="0" cellpadding="0" cellspacing="0" align="center" style="border-top: 0px">
+                <tr >
+                    <td style="width: 50%"><b>รุ่นรถ: </b><?=$arraycar['co_carmodel']?></td>
+                    <td style="width: 50%">
+                        <b>ทะเบียน: </b><?=$arrayres['rs_doc']?>
+                    </td>
+                </tr>
+            </table>
+
         </div>
     </div>
 </div>
@@ -101,9 +125,9 @@ $login = mysqli_fetch_array($result_login);
                     <th class="text-center" >#</th>
                     <th class="text-center" >รหัส</th>
                     <th class="text-center" >รายการ</th>
-                    <th class="text-center">ราคา</th>
+                    <th class="text-center">ราคา(บาท)</th>
                     <th class="text-center" width="200px">จำนวน</th>
-                    <th class="text-center">ราคารวม</th>
+                    <th class="text-center">ราคารวม(บาท)</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -122,9 +146,9 @@ $login = mysqli_fetch_array($result_login);
                             <td class="text-center"><?= $n; ?></td>
                             <td><?= $arraych['ch_id'] ?></td>
                             <td><?= $arraych['ch_list'] ?></td>
-                            <td class="text-right"><?= number_format($array_list2['re_price']) ?> บาท</td>
+                            <td class="text-right"><?= number_format($array_list2['re_price']) ?></td>
                             <td class="text-right">-</td>
-                            <td class="text-right"><?= number_format($array_list2['re_price'] ) ?> บาท</td>
+                            <td class="text-right"><?= number_format($array_list2['re_price'] ) ?></td>
                         </tr>
                         <?php
                         $alltotal+= $array_list2['re_price'];
@@ -143,9 +167,9 @@ $login = mysqli_fetch_array($result_login);
                             <td class="text-center"><?= $n; ?></td>
                             <td><?= $arraysp['sp_id'] ?></td>
                             <td><?= $arraysp['sp_name'] ?></td>
-                            <td class="text-right"><?= number_format($array_list['re_price']) ?> บาท</td>
+                            <td class="text-right"><?= number_format($array_list['re_price']) ?></td>
                             <td class="text-right"><?= $array_list['re_num']?> ชิ้น</td>
-                            <td class="text-right"><?= number_format($array_list['re_price']*$array_list['re_num'] ) ?> บาท</td>
+                            <td class="text-right"><?= number_format($array_list['re_price']*$array_list['re_num'] ) ?></td>
                         </tr>
                         <?php
                         $alltotal+= $array_list['re_price']*$array_list['re_num'];
@@ -156,7 +180,7 @@ $login = mysqli_fetch_array($result_login);
                     <td class="text-right" colspan="5">
                         รวม
                     </td>
-                    <td class="text-right" ><?=number_format($alltotal)?> บาท</td>
+                    <td class="text-right" ><?=number_format($alltotal)?></td>
 
                 </tr>
                 </tbody>
@@ -164,20 +188,24 @@ $login = mysqli_fetch_array($result_login);
         </div>
     </div>
     </div>
-    <div class="clearfix"></div><br><br><br>
-    <div style=" max-width: 500px">
-        <center>
-            ผู้ออกใบเสร็จ............................................................................<br><br>
-            (คุณ<?=$login['emp_name']?>)
-        </center>
-    </div>
-    <div class="clearfix"></div><br>
-    <div style=" max-width: 500px">
-        <center>
-            ลูกค้า............................................................................<br><br>
-            (คุณ<?=$arraycus['cus_name']?>)
-        </center>
-    </div>
+    <div class="clearfix"></div><br><br>
+    <div class="col-md-12">
+        <table  style="width: 100%;max-width: 100%;margin-bottom: 20px;" border="0" cellpadding="0" cellspacing="0" align="center" style="border-top: 0px">
+            <tr >
+                <td style="width: 50%">
+                    <center>
+                        ผู้รับเงิน............................................................................<br><br>
+                        (คุณ<?=$login['emp_name']?>)
+                    </center>
+                </td>
+                <td style="width: 50%">
+                    <center>
+                        ลูกค้า............................................................................<br><br>
+                        (คุณ<?=$arraycus['cus_name']?>)
+                    </center>
+                </td>
+            </tr>
+        </table>
     </div>
 </body>
 </html>

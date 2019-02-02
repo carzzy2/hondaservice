@@ -13,8 +13,8 @@ if($query){
     } else {
         $autoid = "GEC" . sprintf("%06d", $newid['MaxID']);
     }
-    $sql = "insert into get_car(gc_id,gc_date,gc_doc,gc_text,cus_id,rs_id,co_id,gc_status) 
-            values('" . $autoid . "',NOW(),'" . $_POST['gc_doc'] . "','" . $_POST['gc_text'] . "','" . $_POST['cus_id'] . "','" . $_POST['rs_id'] . "','" . $_POST['co_id'] . "',0)";
+    $sql = "insert into get_car(gc_id,gc_date,gc_text,cus_id,rs_id,co_id,gc_status) 
+            values('" . $autoid . "',NOW(),'" . $_POST['gc_text'] . "','" . $_POST['cus_id'] . "','" . $_POST['rs_id'] . "','" . $_POST['co_id'] . "',0)";
     mysqli_query($connect, $sql);
     echo "<script>alert('เพิ่มข้อมูลเรียบร้อย');</script>";
 }else{

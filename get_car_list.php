@@ -19,13 +19,8 @@
                     <tbody>
                     <?php
                     $n = 0;
-                    if (isset($_GET['search'])) {
-                        $sql = "select *,date(rs_date) as `date`,time(rs_date) as `time`,date(rs_datereal) as `datereal`,time(rs_datereal) as `timereal`
-                                from reservation where rs_status='ยืนยันการจองแล้ว' and  rs_id like '%" . $_GET['search'] . "%' order by rs_id asc";
-                    } else {
-                        $sql = "select *,date(rs_date) as `date`,time(rs_date) as `time`,date(rs_datereal) as `datereal`,time(rs_datereal) as `timereal` 
-                                from reservation where rs_status='ยืนยันการจองแล้ว' order by rs_id asc";
-                    }
+                    $sql = "select *,date(rs_date) as `date`,time(rs_date) as `time`,date(rs_datereal) as `datereal`,time(rs_datereal) as `timereal` 
+                                from reservation where rs_status='ยืนยันการจองแล้ว' and date(rs_date) >= CURDATE() order by rs_date desc";
                     $query = mysqli_query($connect, $sql);
                     if (mysqli_num_rows($query) > 0 ) {
                         while ($array = mysqli_fetch_array($query)) {

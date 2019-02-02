@@ -39,13 +39,17 @@ unset($_SESSION['ss_ch_id']);
                             $sql2 = "select * from customer where cus_id='".$array['cus_id']."'";
                             $query2 = mysqli_query($connect, $sql2);
                             $array2 = mysqli_fetch_array($query2);
+
+                            $sqlres = "select * from reservation where rs_id='".$array['rs_id']."'";
+                            $queryres = mysqli_query($connect, $sqlres);
+                            $arrayres = mysqli_fetch_array($queryres);
                             ?>
                             <tr>
                                 <td class="text-center" scope="row"><?= $n; ?></td>
                                 <td style="max-width: 200px"><?= $array['gc_id'] ?></td>
                                 <td style="max-width: 200px">คุณ<?= $array2['cus_name'] ?></td>
                                 <td style="max-width: 200px" class="text-center"><?= FormatDay($array['gc_date']) ?></td>
-                                <td><?= $array['gc_doc'] ?></td>
+                                <td><?= $arrayres['rs_doc'] ?></td>
                                 <td><?= $array['gc_text'] ?></td>
                                 <td class="text-center">
                                     <a data-toggle="tooltip"  href="repair_form.php?id=<?= $array['gc_id'] ?>" class="btn btn-default" data-original-title="Confirm"><i class="fa fa-check-circle" aria-hidden="true"> บันทึก</i></a>

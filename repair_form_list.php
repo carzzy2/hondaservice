@@ -58,7 +58,7 @@ if($_GET['mode']=="add"){// add item
             <th class="text-center" >#</th>
             <th class="text-center" >รหัส</th>
             <th class="text-center" >รายการ</th>
-            <th class="text-center">ราคา</th>
+            <th class="text-center">ราคา(บาท)</th>
             <th class="text-center" width="200px">จำนวน</th>
             <th class="text-center">จัดการข้อมูล</th>
         </tr>
@@ -87,7 +87,7 @@ if($_GET['mode']=="add"){// add item
                         <td class="text-center"><?= $_SESSION['ss_ch_id'][$key] ?></td>
                         <td><?= $arraych['ch_list'] ?></td>
                         <td class="text-right">
-                            <?= $arraych['ch_price'] ?> บาท
+                            <?= $arraych['ch_price'] ?>
                             <input type="hidden" name="ch_price[<?=$key?>]" value="<?= $arraych['ch_price'] ?>" >
                         </td>
                         <td class="text-right">-</td>
@@ -111,7 +111,7 @@ if($_GET['mode']=="add"){// add item
                         <td class="text-center"><?= $_SESSION['ss_sp_id'][$key] ?></td>
                         <td><?= $arraysp['sp_name'] ?></td>
                         <td class="text-right">
-                            <?= $arraysp['sp_price'] ?> บาท
+                            <?= $arraysp['sp_price'] ?>
                             <input type="hidden" name="sp_price[<?=$key?>]" value="<?= $arraysp['sp_price'] ?>">
                         </td>
                         <td class="text-right">

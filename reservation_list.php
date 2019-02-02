@@ -19,13 +19,8 @@
                     <tbody>
                     <?php
                     $n = 0;
-                    if (isset($_GET['search'])) {
-                        $sql = "select *,date(rs_date) as `date`,time(rs_date) as `time`,date(rs_datereal) as `datereal`,time(rs_datereal) as `timereal` 
-                                from reservation where rs_status='ยังไม่ยืนยันการจอง' and  rs_id like '%" . $_GET['search'] . "%' order by rs_id asc";
-                    } else {
-                        $sql = "select *,date(rs_date) as `date`,time(rs_date) as `time`,date(rs_datereal) as `datereal`,time(rs_datereal) as `timereal`
-                                from reservation where rs_status='ยังไม่ยืนยันการจอง' and date(rs_date) >= CURDATE() order by rs_id asc";
-                    }
+                    $sql = "select *,date(rs_date) as `date`,time(rs_date) as `time`,date(rs_datereal) as `datereal`,time(rs_datereal) as `timereal`
+                                from reservation where rs_status='ยังไม่ยืนยันการจอง' order by rs_id asc";
                     $query = mysqli_query($connect, $sql);
                     if (mysqli_num_rows($query) > 0 ) {
                         while ($array = mysqli_fetch_array($query)) {
@@ -33,15 +28,21 @@
                             $sql2 = "select * from customer where cus_id='".$array['cus_id']."'";
                             $query2 = mysqli_query($connect, $sql2);
                             $array2 = mysqli_fetch_array($query2);
+                            if($array['date'] <>date("Y-m-d")){
+                                $disable = "disabled";
+                            }else{
+                                $disable = "";
+                            }
+                            $id =$array['rs_id'];
                             ?>
                             <tr>
                                 <td class="text-center" scope="row"><?= $n; ?></td>
                                 <td style="max-width: 200px">คุณ<?= $array2['cus_name'] ?></td>
-                                <td class="text-center"><?= FormatDay($array['rs_datereal']) ?> <?= $array['timereal'] ?></td>
+                                <td class="text-center"><?= FormatDay($array['datereal']) ?> <?= $array['timereal'] ?></td>
                                 <td class="text-center"><?= FormatDay($array['date']) ?> <?= $array['time'] ?></td>
                                 <td><?= $array['rs_description'] ?></td>
                                 <td class="text-center">
-                                    <a data-toggle="tooltip" href="reservation_save.php?mode=add&id=<?= $array['rs_id'] ?>" class="btn btn-default" data-original-title="Confirm"><i class="fa fa-check-circle" aria-hidden="true"></i> ยืนยัน</a>
+                                    <button onclick="window.location.href='reservation_save.php?mode=add&id=<?=$id ?>'" data-toggle="tooltip" href="" class="btn btn-default" data-original-title="Confirm" <?=$disable?> ><i class="fa fa-check-circle" aria-hidden="true"></i> ยืนยัน</button>
                                     <a data-toggle="tooltip" href="reservation_cancel.php?&id=<?= $array['rs_id'] ?>"  class="btn btn-default" data-original-title="Trash"><i class="fa fa-trash-o" aria-hidden="true"></i> ยกเลิก</a>
                                 </td>
                             </tr>

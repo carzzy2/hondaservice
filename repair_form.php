@@ -9,6 +9,10 @@ $autoid=$array['gc_id'];
 $sql2 = "select * from customer where cus_id='".$array['cus_id']."'";
 $query2 = mysqli_query($connect, $sql2);
 $cus = mysqli_fetch_array($query2);
+
+$sqlres = "select * from reservation where rs_id='".$array['rs_id']."'";
+$queryres = mysqli_query($connect, $sqlres);
+$arrayres = mysqli_fetch_array($queryres);
 ?>
 <div class="container-fluid">
     <div class="product-status-wrap">
@@ -38,7 +42,7 @@ $cus = mysqli_fetch_array($query2);
                                                     </div>
                                                     <div class="col-md-3">
                                                         <label class="login2 pull-right-pro">ทะเบียนรถ</label>
-                                                        <input type="text" value="<?= $array['gc_doc'] ?>" name="gc_doc" class="form-control" readonly>
+                                                        <input type="text" value="<?= $arrayres['rs_doc'] ?>" name="gc_doc" class="form-control" readonly>
                                                     </div>
                                                     <div class="col-md-3">
                                                         <label class="login2 pull-right-pro">อาการ</label>
@@ -85,7 +89,7 @@ $cus = mysqli_fetch_array($query2);
                                 <th class="text-center">#</th>
                                 <th class="text-center">รหัสตรวจเช็ค</th>
                                 <th class="text-center">รายการตรวจเช็ค</th>
-                                <th class="text-center">ราคา</th>
+                                <th class="text-center">ราคา(บาท)</th>
                                 <th class="text-center">จัดการข้อมูล</th>
                             </tr>
                             </thead>
@@ -103,7 +107,7 @@ $cus = mysqli_fetch_array($query2);
                                         <td class="text-center" scope="row"><?= $n; ?></td>
                                         <td><?= $array['ch_id'] ?></td>
                                         <td><?= $array['ch_list'] ?></td>
-                                        <td class="text-right"><?= number_format($array['ch_price']) ?> บาท</td>
+                                        <td class="text-right"><?= number_format($array['ch_price']) ?></td>
                                         <td class="text-center">
                                             <a data-dismiss="modal" class="btn btn-default addList" href="#" data-url="repair_form_list.php?ch=1&mode=add&id=<?= $array['ch_id'] ?>">
                                                 เลือก
@@ -148,7 +152,7 @@ $cus = mysqli_fetch_array($query2);
                                 <th class="text-center">รหัสอะไหล่</th>
                                 <th class="text-center">ชื่ออะไหล่</th>
                                 <th class="text-center">รายละเอียด</th>
-                                <th class="text-center">ราคา</th>
+                                <th class="text-center">ราคา(บาท)</th>
                                 <th class="text-center">จำนวน</th>
                                 <th class="text-center">จัดการข้อมูล</th>
                             </tr>
@@ -168,7 +172,7 @@ $cus = mysqli_fetch_array($query2);
                                         <td><?= $array['sp_id'] ?></td>
                                         <td><?= $array['sp_name'] ?></td>
                                         <td><?= $array['sp_description'] ?></td>
-                                        <td class="text-right"><?= number_format($array['sp_price']) ?> บาท</td>
+                                        <td class="text-right"><?= number_format($array['sp_price']) ?></td>
                                         <td class="text-right"><?= number_format($array['sp_num']) ?> ชิ้น</td>
                                         <td class="text-center">
                                             <a data-dismiss="modal" class="btn btn-default addList" href="#" data-url="repair_form_list.php?ch=2&mode=add&id=<?= $array['sp_id'] ?>">
