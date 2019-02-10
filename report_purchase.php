@@ -64,6 +64,7 @@ include "header.php";
         <div class="row">
             <div class="col-md-12">
                 <div class="pull-right">
+<!--                    <a href="report_purchase_pdf.php" class="btn btn-danger" >Export to PDF</a>-->
                     <a download="Report.xls" class="btn btn-warning" onclick="return ExcellentExport.excel(this, 'export', 'Report');">Export to Excel</a>
                 </div>
             </div>
@@ -84,6 +85,8 @@ include "header.php";
                     <tbody>
                     <?php
                     $n = 0;
+                    $count1=0;
+                    $count2=0;
                     if($status=='0'){
                         $where ="and po_status='0' ";
                     }elseif($status=='1'){
@@ -102,11 +105,15 @@ include "header.php";
                             if($array['po_status']=='1'){
                                 $status='รับของแล้ว';
                                 $color='blue';
+                                $count1+= 1;
+
                             }else{
                                 $status='ยังไม่ได้รับของ';
                                 $color='red';
+                                $count2+= 1;
                             }
                             $total+=$array['po_total'];
+
                             ?>
                             <tr>
                                 <td class="text-center" scope="row"><?= $n; ?></td>
@@ -123,6 +130,18 @@ include "header.php";
                         <tr>
                             <td colspan="6" class="text-right">รวมทั้งสิ้น</td>
                             <td  class="text-right"><?= number_format($total) ?> บาท</td>
+                        </tr>
+                        <tr>
+                            <td colspan="6" class="text-right">ทั้งหมด</td>
+                            <td  class="text-right"><?= $n ?> รายการ</td>
+                        </tr>
+                        <tr>
+                            <td colspan="6" class="text-right">รับของแล้ว</td>
+                            <td  class="text-right"><?= $count1 ?> รายการ</td>
+                        </tr>
+                        <tr>
+                            <td colspan="6" class="text-right">ยังไม่ได้รับของ</td>
+                            <td  class="text-right"><?= $count2 ?> รายการ</td>
                         </tr>
                         <?php
                     } else {

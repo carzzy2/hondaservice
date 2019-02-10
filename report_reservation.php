@@ -39,10 +39,11 @@ include "header.php";
                         <div class="row">
                             <div class="col-sm-12"><p align="center">
                                     <b>สถานะ:</b>
-                                    <label class="radio-inline"><input type="radio" name="status" value = "9" <?php if($_GET['status']==9 or empty($_GET['status'])){echo 'checked';}?>>ทั้งหมด</label>
-                                    <label class="radio-inline"><input type="radio"  name="status" value="0" <?php if($_GET['status']=='0' ){echo 'checked';}?>>ยังไม่ยืนยันการจอง</label>
-                                    <label class="radio-inline"><input type="radio" name="status" value="1" <?php if($_GET['status']=='1' ){echo 'checked';}?>>ยืนยันการจองแล้ว</label>
-
+                                    <label class="radio-inline"><input type="radio" name="status" value = "9" <?php if($_GET['status']=='9' or empty($_GET['status'])){echo 'checked';}?>>ทั้งหมด</label>
+                                    <label class="radio-inline"><input type="radio"  name="status" value="0" <?php if($_GET['status']== '0' ){echo 'checked';}?>>ยกเลิก</label>
+                                    <label class="radio-inline"><input type="radio" name="status" value="1" <?php if($_GET['status']=='1' ){echo 'checked';}?>>ยืนยันแล้ว</label>
+                                    <label class="radio-inline"><input type="radio" name="status" value="2" <?php if($_GET['status']=='2' ){echo 'checked';}?>>เข้ารับบริการ</label>
+                                    <label class="radio-inline"><input type="radio" name="status" value="3" <?php if($_GET['status']=='3' ){echo 'checked';}?>>ยังไม่ยืนยันการจอง</label>
                                 </p>
                             </div>
                         </div>
@@ -83,12 +84,20 @@ include "header.php";
                     <tbody>
                     <?php
                     $n = 0;
+                    $count1 = 0;
+                    $count2 = 0;
+                    $count3 = 0;
+                    $count4 = 0;
                     if($status=='0'){
-                        $where ="and rs_status='ยังไม่ยืนยันการจอง' ";
+                        $where ="and rs_status='ยกเลิกการจองแล้ว' ";
                     }elseif($status=='1'){
                         $where ="and rs_status='ยืนยันการจองแล้ว' ";
+                    }elseif($status=='2'){
+                        $where ="and rs_status='นำรถเข้ารับบริการแล้ว'";
+                    }elseif($status=='3'){
+                        $where ="and rs_status='ยังไม่ยืนยันการจอง'";
                     }else{
-                        $where ="and rs_status in ('ยังไม่ยืนยันการจอง','ยืนยันการจองแล้ว')";
+                        $where ="";
                     }
                     $sql = "select *,date(rs_date) as `date`,time(rs_date) as `time`,date(rs_datereal) as `datereal`,time(rs_datereal) as `timereal`
                             from reservation where  date(rs_datereal) between '$fromdate' and '$todate' $where order by rs_datereal asc";
@@ -99,10 +108,19 @@ include "header.php";
                             $sql2 = "select * from customer where cus_id='".$array['cus_id']."'";
                             $query2 = mysqli_query($connect, $sql2);
                             $array2 = mysqli_fetch_array($query2);
-                            if($array['rs_status']=='ยืนยันการจองแล้ว'){
-                                $color='blue';
-                            }else{
+                            if($array['rs_status']=='ยกเลิกการจองแล้ว'){
                                 $color='red';
+                            }else{
+                                $color='blue';
+                            }
+                            if($array['rs_status']=='ยกเลิกการจองแล้ว'){
+                               $count1+=1;
+                            }elseif($array['rs_status']=='ยืนยันการจองแล้ว'){
+                                $count2+=1;
+                            }elseif($array['rs_status']=='นำรถเข้ารับบริการแล้ว'){
+                                $count3+=1;
+                            }elseif($array['rs_status']=='ยังไม่ยืนยันการจอง'){
+                                $count4+=1;
                             }
                             ?>
                             <tr>
@@ -116,6 +134,27 @@ include "header.php";
                             <?php
                         }
                         ?>
+                        <tr>
+                            <td colspan="5" class="text-right">ทั้งหมด</td>
+                            <td  class="text-right"><?= $n ?> รายการ</td>
+                        </tr>
+                        <tr>
+                            <td colspan="5" class="text-right">ยกเลิกการจองแล้ว</td>
+                            <td  class="text-right"><?= $count1 ?> รายการ</td>
+                        </tr>
+                        <tr>
+                            <td colspan="5" class="text-right">ยืนยันการจองแล้ว</td>
+                            <td  class="text-right"><?= $count2 ?> รายการ</td>
+                        </tr>
+                        <tr>
+                            <td colspan="5" class="text-right">นำรถเข้ารับบริการแล้ว</td>
+                            <td  class="text-right"><?= $count3 ?> รายการ</td>
+                        </tr>
+                        <tr>
+                            <td colspan="5" class="text-right">ยังไม่ยืนยันการจอง</td>
+                            <td  class="text-right"><?= $count4 ?> รายการ</td>
+                        </tr>
+
                         <?php
                     } else {
                         ?>

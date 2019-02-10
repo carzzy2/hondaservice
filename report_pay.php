@@ -101,6 +101,10 @@ include "header.php";
                             <td colspan="4" class="text-right">รวมทั้งสิ้น</td>
                             <td  class="text-right"><?= number_format($total) ?> บาท</td>
                         </tr>
+                        <tr>
+                            <td colspan="4" class="text-right">ทั้งหมด</td>
+                            <td  class="text-right"><?= number_format($n) ?> รายการ</td>
+                        </tr>
                         <?php
                     } else {
                         ?>

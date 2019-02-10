@@ -20,11 +20,7 @@
                     <tbody>
                     <?php
                     $n = 0;
-                    if (isset($_GET['search'])) {
-                        $sql = "select * from get_car where gc_status='0' and  gc_id like '%" . $_GET['search'] . "%' order by gc_id asc";
-                    } else {
-                        $sql = "select * from get_car where gc_status='0' order by gc_id asc";
-                    }
+                    $sql = "select * from get_car where gc_status='0' order by gc_date desc";
                     $query = mysqli_query($connect, $sql);
                     if (mysqli_num_rows($query) > 0 ) {
                         while ($array = mysqli_fetch_array($query)) {
