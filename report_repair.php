@@ -57,12 +57,14 @@ include "header.php";
         <?php
         $fromdate = $_GET['fromdate'];
         $todate = $_GET['todate'];
+        $status = $_GET['status'];
         if(isset($fromdate) and isset($todate)){
 
         ?>
         <div class="row">
             <div class="col-md-12">
                 <div class="pull-right">
+                    <a href="report_repair_pdf.php?fromdate=<?=$fromdate?>&todate=<?=$todate?>&status=<?=$status?>" target="_blank" class="btn btn-danger" >Export to PDF</a>
                     <a download="Report.xls" class="btn btn-warning" onclick="return ExcellentExport.excel(this, 'export', 'Report');">Export to Excel</a>
                 </div>
             </div>
@@ -109,6 +111,9 @@ include "header.php";
                             $query3 = mysqli_query($connect, $sql3);
                             $array3 = mysqli_fetch_array($query3);
 
+                            $sqlres = "select * from reservation where rs_id='".$array['rs_id']."'";
+                            $queryres = mysqli_query($connect, $sqlres);
+                            $arrayres = mysqli_fetch_array($queryres);
                             if($array['rs_status']=='ซ่อมรถเสร็จแล้ว'){
                                 $count1+=1;
                             }elseif($array['rs_status']=='ชำระเงินแล้ว'){
@@ -123,10 +128,9 @@ include "header.php";
                                 <td style="max-width: 200px"><?= $array['re_id'] ?></td>
                                 <td style="max-width: 200px" class="text-center"><?= FormatDay($array['re_date']) ?></td>
                                 <td style="max-width: 200px"><?= $array3['cus_name'] ?></td>
-                                <td style="max-width: 200px"><?= $array2['gc_doc'] ?></td>
+                                <td style="max-width: 200px"><?= $arrayres['rs_doc'] ?></td>
                                 <td style="max-width: 200px"><?= $array2['gc_text'] ?></td>
                                 <td class="text-center"><?= $array['rs_status'] ?></td>
-
                                 <td class="text-right"><?= number_format($array['re_total']) ?> บาท</td>
                             </tr>
                             <?php
@@ -136,10 +140,7 @@ include "header.php";
                             <td colspan="7" class="text-right">รวมทั้งสิ้น</td>
                             <td  class="text-right"><?= number_format($total) ?> บาท</td>
                         </tr>
-                        <tr>
-                            <td colspan="7" class="text-right">ทั้งหมด</td>
-                            <td  class="text-right"><?= $n ?> รายการ</td>
-                        </tr>
+
                         <tr>
                             <td colspan="7" class="text-right">ซ่อมรถเสร็จแล้ว</td>
                             <td  class="text-right"><?= $count1 ?> รายการ</td>
@@ -152,12 +153,15 @@ include "header.php";
                             <td colspan="7" class="text-right">รับรถแล้ว</td>
                             <td  class="text-right"><?= $count3 ?> รายการ</td>
                         </tr>
-
+                        <tr>
+                            <td colspan="7" class="text-right">ทั้งหมด</td>
+                            <td  class="text-right"><?= $n ?> รายการ</td>
+                        </tr>
                         <?php
                     } else {
                         ?>
                         <tr>
-                            <th style="text-align: center;color: red;" colspan="7"> ไม่พบข้อมูล</th>
+                            <th style="text-align: center;color: red;" colspan="8"> ไม่พบข้อมูล</th>
                         </tr>
                         <?php
                     }

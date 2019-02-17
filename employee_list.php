@@ -57,6 +57,8 @@
                             $n++;
                             if($array['emp_position']=='0'){
                                 $status='ผู้ดูแลระบบ';
+                            }elseif($array['emp_position']=='2'){
+                                $status='ผู้บริหาร';
                             }else{
                                 $status='พนักงาน';
                             }

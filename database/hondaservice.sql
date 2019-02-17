@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50723
 File Encoding         : 65001
 
-Date: 2019-02-02 13:53:14
+Date: 2019-02-17 19:56:19
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -179,6 +179,7 @@ INSERT INTO `employee` VALUES ('EMP000001', 'admin', '1111', 'Thanaporn Sermprun
 INSERT INTO `employee` VALUES ('EMP000002', 'user', 'user', 'thanaporn', '7878', '12345678', '1');
 INSERT INTO `employee` VALUES ('EMP000004', '1111', '2222', 'พรชัย ภูชัยยัง', '115/8', '0827468287', '1');
 INSERT INTO `employee` VALUES ('EMP000005', 'qqqq', 'wwww', 'asdasd', 'asdasd', '1231231231', '1');
+INSERT INTO `employee` VALUES ('EMP000006', 'senior', '1234', 'ปกรณ์ ภูชัยยัง', '111/122 อำเภอเมือง ตำบลในเมือง จังหวัดขอนแก่น', '0827415862', '2');
 
 -- ----------------------------
 -- Table structure for get_car

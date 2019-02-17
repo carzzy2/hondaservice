@@ -65,6 +65,7 @@ include "header.php";
         <div class="row">
             <div class="col-md-12">
                 <div class="pull-right">
+                    <a href="report_repair_pdf.php?fromdate=<?=$fromdate?>&todate=<?=$todate?>&status=<?=$status?>" target="_blank" class="btn btn-danger" >Export to PDF</a>
                     <a download="Report.xls" class="btn btn-warning" onclick="return ExcellentExport.excel(this, 'export', 'Report');">Export to Excel</a>
                 </div>
             </div>
@@ -134,10 +135,7 @@ include "header.php";
                             <?php
                         }
                         ?>
-                        <tr>
-                            <td colspan="5" class="text-right">ทั้งหมด</td>
-                            <td  class="text-right"><?= $n ?> รายการ</td>
-                        </tr>
+
                         <tr>
                             <td colspan="5" class="text-right">ยกเลิกการจองแล้ว</td>
                             <td  class="text-right"><?= $count1 ?> รายการ</td>
@@ -154,7 +152,10 @@ include "header.php";
                             <td colspan="5" class="text-right">ยังไม่ยืนยันการจอง</td>
                             <td  class="text-right"><?= $count4 ?> รายการ</td>
                         </tr>
-
+                        <tr>
+                            <td colspan="5" class="text-right">ทั้งหมด</td>
+                            <td  class="text-right"><?= $n ?> รายการ</td>
+                        </tr>
                         <?php
                     } else {
                         ?>

@@ -64,7 +64,7 @@ include "header.php";
         <div class="row">
             <div class="col-md-12">
                 <div class="pull-right">
-<!--                    <a href="report_purchase_pdf.php" class="btn btn-danger" >Export to PDF</a>-->
+                    <a href="report_purchase_pdf.php?fromdate=<?=$fromdate?>&todate=<?=$todate?>&status=<?=$status?>" target="_blank" class="btn btn-danger" >Export to PDF</a>
                     <a download="Report.xls" class="btn btn-warning" onclick="return ExcellentExport.excel(this, 'export', 'Report');">Export to Excel</a>
                 </div>
             </div>
@@ -127,10 +127,7 @@ include "header.php";
                             <?php
                         }
                         ?>
-                        <tr>
-                            <td colspan="6" class="text-right">รวมทั้งสิ้น</td>
-                            <td  class="text-right"><?= number_format($total) ?> บาท</td>
-                        </tr>
+
                         <tr>
                             <td colspan="6" class="text-right">ทั้งหมด</td>
                             <td  class="text-right"><?= $n ?> รายการ</td>
@@ -142,6 +139,10 @@ include "header.php";
                         <tr>
                             <td colspan="6" class="text-right">ยังไม่ได้รับของ</td>
                             <td  class="text-right"><?= $count2 ?> รายการ</td>
+                        </tr>
+                        <tr>
+                            <td colspan="6" class="text-right">รวมทั้งสิ้น</td>
+                            <td  class="text-right"><?= number_format($total) ?> บาท</td>
                         </tr>
                         <?php
                     } else {

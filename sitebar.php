@@ -94,7 +94,10 @@ if ($login['emp_position'] == "0") {
     $loginposition = "ผู้ดูแลระบบ";
 } elseif ($login['emp_position'] == "1") {
     $loginposition = "พนักงาน";
+}elseif ($login['emp_position'] == "2") {
+    $loginposition = "ผู้บริหาร";
 }
+
 ?>
 <div class="left-sidebar-pro">
     <nav id="sidebar" class="">
@@ -104,32 +107,63 @@ if ($login['emp_position'] == "0") {
         <div class="left-custom-menu-adp-wrap comment-scrollbar">
             <nav class="sidebar-nav left-sidebar-menu-pro">
                 <ul class="metismenu" id="menu1">
+                    <?php
+                    if($login['emp_position'] !='2') {
+                        ?>
+                        <li>
+                            <a class="has-arrow" href="index.php">
+                                <i class="fa big-icon fa-home icon-wrap"></i>
+                                <span class="mini-click-non">ข้อมูลพื้นฐาน</span>
+                            </a>
+                            <ul class="submenu-angle" aria-expanded="true">
+                                <?php if ($login['emp_position'] == "0") { ?>
+                                    <li><a href="employee_list.php"><i class="fa fa-bullseye sub-icon-mg"
+                                                                       aria-hidden="true"></i> <span
+                                                    class="mini-sub-pro">ข้อมูลพนักงาน</span></a></li>
+                                <?php } ?>
+                                <li><a href="store.php"><i class="fa fa-bullseye sub-icon-mg" aria-hidden="true"></i>
+                                        <span class="mini-sub-pro">ข้อมูลร้าน</span></a></li>
+                                <li><a href="customer_list.php"><i class="fa fa-bullseye sub-icon-mg"
+                                                                   aria-hidden="true"></i> <span class="mini-sub-pro">ข้อมูลลูกค้า</span></a>
+                                </li>
+                                <li><a href="car_list.php"><i class="fa fa-bullseye sub-icon-mg" aria-hidden="true"></i>
+                                        <span class="mini-sub-pro">ข้อมูลรถ</span></a></li>
+                                <li><a href="check_list.php"><i class="fa fa-bullseye sub-icon-mg"
+                                                                aria-hidden="true"></i> <span class="mini-sub-pro">ข้อมูลรายการตรวจเช็ค</span></a>
+                                </li>
+                                <li><a href="spareparts_list.php"><i class="fa fa-bullseye sub-icon-mg"
+                                                                     aria-hidden="true"></i> <span class="mini-sub-pro">ข้อมูลอะไหล่</span></a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li><a href="purchase_show.php" aria-expanded="false"><i class="fa big-icon fa-table icon-wrap"
+                                                                                 aria-hidden="true"></i><span
+                                        class="mini-click-non">สั่งซื้ออะไหล่</span></a></li>
+                        <li><a href="back_purchase_list.php" aria-expanded="false"><i
+                                        class="fa big-icon fa-table icon-wrap" aria-hidden="true"></i><span
+                                        class="mini-click-non">รับอะไหล่</span></a></li>
+                        <li><a href="reservation_list.php" aria-expanded="false"><i
+                                        class="fa big-icon fa-table icon-wrap" aria-hidden="true"></i><span
+                                        class="mini-click-non">ยืนยันการจอง</span></a></li>
 
-                    <li>
-                        <a class="has-arrow" href="index.php">
-                            <i class="fa big-icon fa-home icon-wrap"></i>
-                            <span class="mini-click-non">ข้อมูลพื้นฐาน</span>
-                        </a>
-                        <ul class="submenu-angle" aria-expanded="true">
-                            <?php if ($login['emp_position'] == "0") { ?>
-                                <li><a href="employee_list.php"><i class="fa fa-bullseye sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">ข้อมูลพนักงาน</span></a></li>
-                            <?php } ?>
-                            <li><a href="store.php"><i class="fa fa-bullseye sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">ข้อมูลร้าน</span></a></li>
-                            <li><a href="customer_list.php"><i class="fa fa-bullseye sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">ข้อมูลลูกค้า</span></a></li>
-                            <li><a href="car_list.php"><i class="fa fa-bullseye sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">ข้อมูลรถ</span></a></li>
-                            <li><a href="check_list.php"><i class="fa fa-bullseye sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">ข้อมูลรายการตรวจเช็ค</span></a></li>
-                            <li><a href="spareparts_list.php"><i class="fa fa-bullseye sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">ข้อมูลอะไหล่</span></a></li>
-                        </ul>
-                    </li>
-                    <li><a href="purchase_show.php" aria-expanded="false"><i class="fa big-icon fa-table icon-wrap" aria-hidden="true"></i><span class="mini-click-non">สั่งซื้ออะไหล่</span></a></li>
-                    <li><a href="back_purchase_list.php" aria-expanded="false"><i class="fa big-icon fa-table icon-wrap" aria-hidden="true"></i><span class="mini-click-non">รับอะไหล่</span></a></li>
-                    <li><a href="reservation_list.php" aria-expanded="false"><i class="fa big-icon fa-table icon-wrap" aria-hidden="true"></i><span class="mini-click-non">ยืนยันการจอง</span></a></li>
-
-                    <li><a href="get_car_list.php" aria-expanded="false"><i class="fa big-icon fa-table icon-wrap" aria-hidden="true"></i><span class="mini-click-non">นำรถเข้ารับบริการ</span></a></li>
-                    <li><a href="quene_list.php" aria-expanded="false"><i class="fa big-icon fa-table icon-wrap" aria-hidden="true"></i><span class="mini-click-non">จัดคิวเข้ารับบริการ</span></a></li>
-                    <li><a href="repair_show.php" aria-expanded="false"><i class="fa big-icon fa-table icon-wrap" aria-hidden="true"></i><span class="mini-click-non">บันทึกการซ่อม</span></a></li>
-                    <li><a href="pay_show.php" aria-expanded="false"><i class="fa big-icon fa-table icon-wrap" aria-hidden="true"></i><span class="mini-click-non">ชำระค่าซ่อมรถ</span></a></li>
-                    <li><a href="backcar_show.php" aria-expanded="false"><i class="fa big-icon fa-table icon-wrap" aria-hidden="true"></i><span class="mini-click-non">รับรถ</span></a></li>
+                        <li><a href="get_car_list.php" aria-expanded="false"><i class="fa big-icon fa-table icon-wrap"
+                                                                                aria-hidden="true"></i><span
+                                        class="mini-click-non">นำรถเข้ารับบริการ</span></a></li>
+                        <li><a href="quene_list.php" aria-expanded="false"><i class="fa big-icon fa-table icon-wrap"
+                                                                              aria-hidden="true"></i><span
+                                        class="mini-click-non">จัดคิวเข้ารับบริการ</span></a></li>
+                        <li><a href="repair_show.php" aria-expanded="false"><i class="fa big-icon fa-table icon-wrap"
+                                                                               aria-hidden="true"></i><span
+                                        class="mini-click-non">บันทึกการซ่อม</span></a></li>
+                        <li><a href="pay_show.php" aria-expanded="false"><i class="fa big-icon fa-table icon-wrap"
+                                                                            aria-hidden="true"></i><span
+                                        class="mini-click-non">ชำระค่าซ่อมรถ</span></a></li>
+                        <li><a href="backcar_show.php" aria-expanded="false"><i class="fa big-icon fa-table icon-wrap"
+                                                                                aria-hidden="true"></i><span
+                                        class="mini-click-non">รับรถ</span></a></li>
+                        <?php
+                    }
+                    ?>
                 </ul>
             </nav>
         </div>

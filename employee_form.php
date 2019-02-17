@@ -87,6 +87,7 @@ if ($_GET['mode'] == "") {
                                                         <div class="bt-df-checkbox">
                                                             <input class="radio-checked"  name="emp_position" type="radio" value="1" <?php if($mode='add'){ echo 'checked';} ?> <?php if($array['emp_position']=='1'){ echo 'checked' ;} ?>>พนักงาน
                                                             <input class="radio-checked"  name="emp_position" type="radio" value="0" <?php if($array['emp_position']=='0'){ echo 'checked' ;} ?> >ผู้ดูแลระบบ
+                                                            <input class="radio-checked"  name="emp_position" type="radio" value="2" <?php if($array['emp_position']=='2'){ echo 'checked' ;} ?> >ผู้บริหาร
                                                         </div>
                                                     </div>
                                                 </div>

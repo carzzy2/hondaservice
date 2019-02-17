@@ -53,6 +53,7 @@ include "header.php";
         <div class="row">
             <div class="col-md-12">
                 <div class="pull-right">
+                    <a href="report_pay_pdf.php?fromdate=<?=$fromdate?>&todate=<?=$todate?>" target="_blank" class="btn btn-danger" >Export to PDF</a>
                     <a download="Report.xls" class="btn btn-warning" onclick="return ExcellentExport.excel(this, 'export', 'Report');">Export to Excel</a>
                 </div>
             </div>
