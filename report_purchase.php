@@ -78,8 +78,8 @@ include "header.php";
                         <th class="text-center">วันที่สั่งซื้อ</th>
                         <th class="text-center">พนักงาน</th>
                         <th class="text-center">ตัวแทน</th>
-                        <th class="text-center">สถานะ</th>
                         <th class="text-center">จำนวนเงิน</th>
+                        <th class="text-center">สถานะ</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -121,8 +121,9 @@ include "header.php";
                                 <td><?= FormatDay($array['po_date']) ?></td>
                                 <td><?= $array2['emp_name'] ?></td>
                                 <td><?= $array['po_agent'] ?></td>
-                                <td class="text-center" style="color:<?=$color ?>"><?=$status ?></td>
                                 <td class="text-right"><?= number_format($array['po_total']) ?> บาท</td>
+                                <td class="text-center" style="color:<?=$color ?>"><?=$status ?></td>
+
                             </tr>
                             <?php
                         }

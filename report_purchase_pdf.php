@@ -31,8 +31,9 @@ $status = $_GET['status'];
             <th  style="width: 100px">วันที่สั่งซื้อ</th>
             <th  style="width: 180px">พนักงาน</th>
             <th  style="width: 120px">ตัวแทน</th>
-            <th>สถานะ</th>
             <th style="text-align: center">จำนวนเงิน</th>
+            <th>สถานะ</th>
+
         </tr>
         </thead>
         <tbody>
@@ -74,8 +75,8 @@ $status = $_GET['status'];
                     <td><?= FormatDay($array['po_date']) ?></td>
                     <td><?= $array2['emp_name'] ?></td>
                     <td><?= $array['po_agent'] ?></td>
-                    <td style="color:<?=$color ?>"><?=$status ?></td>
                     <td style="text-align: right"><?= number_format($array['po_total']) ?> บาท</td>
+                    <td style="color:<?=$color ?>"><?=$status ?></td>
                 </tr>
                 <?php
             }
