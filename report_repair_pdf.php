@@ -32,8 +32,9 @@ $status = $_GET['status'];
             <th  style="width: 150px">ชื่อลูกค้า</th>
             <th  style="width: 120px">ทะเบียนรถ</th>
             <th style="text-align: center">อาการรถ</th>
-            <th style="text-align: center">สถานะ</th>
             <th style="text-align: center">ยอดรวม</th>
+            <th style="text-align: center">สถานะ</th>
+
         </tr>
         </thead>
         <tbody>
@@ -83,8 +84,9 @@ $status = $_GET['status'];
                     <td style="max-width: 200px"><?= $array3['cus_name'] ?></td>
                     <td><?= $arrayres['rs_doc'] ?></td>
                     <td ><?= $array2['gc_text'] ?></td>
-                    <td  style="text-align: center"><?= $array['rs_status'] ?></td>
                     <td  style="text-align: right"><?= number_format($array['re_total']) ?> บาท</td>
+                    <td  style="text-align: center"><?= $array['rs_status'] ?></td>
+
                 </tr>
                 
                 <?php

@@ -79,8 +79,9 @@ include "header.php";
                         <th class="text-center">ชื่อลูกค้า</th>
                         <th class="text-center">ทะเบียนรถ</th>
                         <th class="text-center">อาการรถ</th>
-                        <th class="text-center">สถานะ</th>
                         <th class="text-right">ยอดรวม</th>
+                        <th class="text-center">สถานะ</th>
+
                     </tr>
                     </thead>
                     <tbody>
@@ -130,8 +131,9 @@ include "header.php";
                                 <td style="max-width: 200px"><?= $array3['cus_name'] ?></td>
                                 <td style="max-width: 200px"><?= $arrayres['rs_doc'] ?></td>
                                 <td style="max-width: 200px"><?= $array2['gc_text'] ?></td>
-                                <td class="text-center"><?= $array['rs_status'] ?></td>
                                 <td class="text-right"><?= number_format($array['re_total']) ?> บาท</td>
+                                <td class="text-center"><?= $array['rs_status'] ?></td>
+
                             </tr>
                             <?php
                         }
