@@ -142,7 +142,7 @@ include "header.php";
                             <td  class="text-right"><?= $count2 ?> รายการ</td>
                         </tr>
                         <tr>
-                            <td colspan="6" class="text-right">รวมทั้งสิ้น</td>
+                            <td colspan="6" class="text-right">รวมทั้งหมด</td>
                             <td  class="text-right"><?= number_format($total) ?> บาท</td>
                         </tr>
                         <?php

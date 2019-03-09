@@ -138,10 +138,7 @@ include "header.php";
                             <?php
                         }
                         ?>
-                        <tr>
-                            <td colspan="7" class="text-right">รวมทั้งสิ้น</td>
-                            <td  class="text-right"><?= number_format($total) ?> บาท</td>
-                        </tr>
+
 
                         <tr>
                             <td colspan="7" class="text-right">ซ่อมรถเสร็จแล้ว</td>
@@ -158,6 +155,10 @@ include "header.php";
                         <tr>
                             <td colspan="7" class="text-right">ทั้งหมด</td>
                             <td  class="text-right"><?= $n ?> รายการ</td>
+                        </tr>
+                        <tr>
+                            <td colspan="7" class="text-right">รวมทั้งหมด</td>
+                            <td  class="text-right"><?= number_format($total) ?> บาท</td>
                         </tr>
                         <?php
                     } else {

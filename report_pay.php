@@ -99,12 +99,12 @@ include "header.php";
                         }
                         ?>
                         <tr>
-                            <td colspan="4" class="text-right">รวมทั้งสิ้น</td>
-                            <td  class="text-right"><?= number_format($total) ?> บาท</td>
+                            <td colspan="4"  style="text-align:right">ทั้งหมด</td>
+                            <td   style="text-align:right"><?= number_format($n) ?> รายการ</td>
                         </tr>
                         <tr>
-                            <td colspan="4" class="text-right">ทั้งหมด</td>
-                            <td  class="text-right"><?= number_format($n) ?> รายการ</td>
+                            <td colspan="4"  style="text-align:right">รวมทั้งหมด</td>
+                            <td   style="text-align:right"><?= number_format($total) ?> บาท</td>
                         </tr>
                         <?php
                     } else {

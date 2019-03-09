@@ -22,7 +22,7 @@ $status = $_GET['status'];
     </tr>
 </table>
 <h3 style="text-align: center">รายงานการจอง</h3>
-<h4>ตั้งแต่วันที่ <?=FormatDay($fromdate)?> ถึงวันที่ <?=FormatDay($todate)?></h4>
+<h4  style="text-align: center">ตั้งแต่วันที่ <?=FormatDay($fromdate)?> ถึงวันที่ <?=FormatDay($todate)?></h4>
     <table width="100%" border="1" align="center" style="padding: 5px; border-collapse:inherit; border:1px  #666666; line-height: 20px; font-size: 12px;" >
         <thead>
         <tr>
@@ -119,6 +119,8 @@ $status = $_GET['status'];
         ?>
         </tbody>
     </table>
+    <h5  style="text-align: right">วันที่พิมพ์ <?= date("d/m/") . (date("Y")) ?></h5>
+
 <?Php
 $html = ob_get_contents();
 ob_end_clean();
